@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css">
+  <title>Products | MiDi Exports</title>
+  <style>
+    :root {
+      --gold: #D4A017;
+      --gold-dk: #b8880f;
+      --dark: #111
+    }
+
+    body {
+      font-family: 'Inter', sans-serif
+    }
+
+    h1,
+    h2,
+    h3,
+    h4 {
+      font-family: 'Playfair Display', serif
+    }
+
+    .navbar-brand span {
+      color: var(--gold)
+    }
+
+    .nav-link {
+      font-size: .85rem;
+      font-weight: 500
+    }
+
+    .nav-link:hover,
+    .nav-link.active {
+      color: var(--gold) !important
+    }
+
+    .btn-gold {
+      background: var(--gold);
+      color: #111;
+      font-weight: 700;
+      border: 2px solid var(--gold);
+      border-radius: 4px;
+      transition: .25s
+    }
+
+    .btn-gold:hover {
+      background: var(--gold-dk);
+      border-color: var(--gold-dk);
+      color: #111;
+      transform: translateY(-2px)
+    }
+
+    .btn-outline-gold {
+      border: 2px solid rgba(255, 255, 255, .75);
+      color: #fff;
+      font-weight: 700;
+      border-radius: 4px;
+      transition: .25s
+    }
+
+    .btn-outline-gold:hover {
+      background: #fff;
+      color: #111;
+      border-color: #fff;
+      transform: translateY(-2px)
+    }
+
+    .stag {
+      font-size: .7rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--gold)
+    }
+
+    .page-banner {
+      margin-top: 70px;
+      height: 60vh;
+      min-height: 320px;
+      background-size: cover;
+      background-position: center;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center
+    }
+
+    .page-banner .ov {
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, .55)
+    }
+
+    .page-banner .bc {
+      position: relative;
+      z-index: 2;
+      color: #fff;
+      padding: 0 1rem
+    }
+
+    .page-banner .bc h1 {
+      font-size: clamp(2.2rem, 6vw, 4rem);
+      font-weight: 700
+    }
+
+    .page-banner .bc p {
+      font-size: 1.1rem;
+      opacity: .88;
+      max-width: 600px;
+      margin: 0 auto
+    }
+
+    .pcard {
+      border: 1px solid #e0e0e0;
+      border-radius: 12px;
+      overflow: hidden;
+      transition: .25s;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, .06);
+      height: 100%
+    }
+
+    .pcard:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 6px 22px rgba(0, 0, 0, .12)
+    }
+
+    .pcard img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover
+    }
+
+    .pcard .cb h3 {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: #111
+    }
+
+    .pcard .cb p {
+      font-size: .88rem;
+      color: #666;
+      line-height: 1.8
+    }
+
+    .vbox {
+      background: #f6f6f6;
+      padding: 2rem;
+      border-radius: 12px;
+      border-left: 4px solid var(--gold);
+      transition: .25s;
+      height: 100%
+    }
+
+    .vbox:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 4px 18px rgba(0, 0, 0, .1)
+    }
+
+    .vbox h3 {
+      font-size: 1rem;
+      font-weight: 700;
+      color: #111;
+      margin-bottom: .4rem
+    }
+
+    .vbox p {
+      font-size: .88rem;
+      color: #666;
+      line-height: 1.8;
+      margin: 0
+    }
+
+    .faq-item {
+      background: #fff;
+      border: 1px solid #e0e0e0;
+      border-radius: 12px;
+      overflow: hidden
+    }
+
+    .faq-q {
+      padding: 1.2rem 1.5rem;
+      font-family: 'Playfair Display', serif;
+      font-size: 1rem;
+      font-weight: 700;
+      color: #111;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      user-select: none
+    }
+
+    .faq-q::after {
+      content: '+';
+      font-size: 1.5rem;
+      color: var(--gold);
+      font-weight: 300;
+      transition: .2s
+    }
+
+    .faq-item.open .faq-q::after {
+      content: '\2212'
+    }
+
+    .faq-a {
+      display: none;
+      padding: 0 1.5rem 1.2rem;
+      font-size: .9rem;
+      color: #666;
+      line-height: 1.8
+    }
+
+    .faq-item.open .faq-a {
+      display: block
+    }
+
+    .scard {
+      background: #fff;
+      border: 1px solid #e0e0e0;
+      border-radius: 12px;
+      padding: 2rem;
+      transition: .25s;
+      height: 100%
+    }
+
+    .scard:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 5px 20px rgba(0, 0, 0, .1)
+    }
+
+    .mbox {
+      background: #fff;
+      border-radius: 12px;
+      padding: 2rem;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, .07);
+      border: 1px solid #e0e0e0;
+      height: 100%;
+      text-align: center
+    }
+
+    .mbox img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 8px;
+      margin-bottom: 1.2rem
+    }
+
+    .ccard {
+      background: #fff;
+      border: 1px solid #e0e0e0;
+      border-radius: 12px;
+      padding: 2rem;
+      transition: .25s;
+      height: 100%
+    }
+
+    .ccard:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 5px 20px rgba(0, 0, 0, .1)
+    }
+
+    .ccard h3 {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--gold);
+      margin-bottom: .75rem
+    }
+
+    .ccard p {
+      font-size: .9rem;
+      color: #666;
+      line-height: 1.8;
+      margin: 0
+    }
+
+    .form-control,
+    .form-select {
+      border: 1.5px solid #e0e0e0;
+      border-radius: 8px;
+      font-size: .9rem;
+      padding: .8rem 1rem
+    }
+
+    .form-control:focus,
+    .form-select:focus {
+      border-color: var(--gold);
+      box-shadow: 0 0 0 3px rgba(212, 160, 23, .15)
+    }
+
+    .cta-sec {
+      background: var(--dark);
+      position: relative;
+      overflow: hidden
+    }
+
+    .cta-sec::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: url('https://images.unsplash.com/photo-1553413077-190dd305871c?w=1200&q=85&fit=crop') center/cover;
+      opacity: .15
+    }
+
+    .cta-sec .inn {
+      position: relative;
+      z-index: 2
+    }
+
+    footer {
+      background: var(--dark)
+    }
+
+    footer .ftag {
+      color: var(--gold)
+    }
+
+    footer a {
+      color: rgba(255, 255, 255, .65);
+      text-decoration: none;
+      transition: .25s
+    }
+
+    footer a:hover {
+      color: var(--gold)
+    }
+
+    footer .fcopy {
+      font-size: .75rem;
+      color: rgba(255, 255, 255, .35);
+      border-top: 1px solid rgba(255, 255, 255, .1)
+    }
+  </style>
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top shadow-sm" style="height:70px">
+    <div class="container-fluid px-4">
+      <a class="navbar-brand fw-bold fs-5" style="font-family:'Playfair Display',serif" href="../index.html">MiDi
+        <span>EXPORTS</span></a>
+      <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#nm"><span
+          class="navbar-toggler-icon"></span></button>
+      <div class="collapse navbar-collapse" id="nm">
+        <ul class="navbar-nav ms-auto gap-1">
+          <li class="nav-item"><a class="nav-link" href="../index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
+          <li class="nav-item"><a class="nav-link active" href="products.html">Products</a></li>
+          <li class="nav-item"><a class="nav-link" href="infrastructure.html">Infrastructure</a></li>
+          <li class="nav-item"><a class="nav-link" href="machinery.html">Machinery</a></li>
+          <li class="nav-item"><a class="nav-link" href="export-market.html">Export Markets</a></li>
+          <li class="nav-item"><a class="nav-link" href="FAQs.html">FAQs</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact Us</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <section class="page-banner"
+    style="background-image:url('https://images.unsplash.com/photo-1542838132-92c53300491e?w=1200&q=85&fit=crop')">
+    <div class="ov"></div>
+    <div class="bc">
+      <h1>Our Products</h1>
+      <p>Premium Indian Products Exported Worldwide</p>
+    </div>
+  </section>
+  <section class="py-5 py-lg-6">
+    <div class="container py-3">
+      <div class="text-center mb-5"><span class="stag d-block mb-2">Export Categories</span>
+        <h2 class="mb-3">What We Export</h2>
+        <p class="text-muted mx-auto" style="max-width:620px">We source, inspect, and export premium quality products to
+          global buyers and distributors across all major markets.</p>
+      </div>
+      <div class="row g-4">
+        <div class="col-sm-6 col-lg-3">
+          <div class="pcard"><img
+              src="https://images.unsplash.com/photo-1519996529931-28324d5a630e?w=1200&q=85&fit=crop"
+              alt="Fresh Fruits">
+            <div class="cb p-4">
+              <h3>Fresh Fruits</h3>
+              <p>Premium quality fresh fruits sourced directly from farms. Carefully packed to maintain natural taste
+                and long shelf life.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6 col-lg-3">
+          <div class="pcard"><img
+              src="https://images.unsplash.com/photo-1540420773420-3366772f4999?w=1200&q=85&fit=crop" alt="Vegetables">
+            <div class="cb p-4">
+              <h3>Fresh Vegetables</h3>
+              <p>Export quality fresh vegetables with hygienic packaging. Naturally grown farm products meeting
+                international standards.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6 col-lg-3">
+          <div class="pcard"><img
+              src="https://images.unsplash.com/photo-1596040033229-a9821ebd058d?w=1200&q=85&fit=crop" alt="Spices">
+            <div class="cb p-4">
+              <h3>Indian Spices</h3>
+              <p>Authentic Indian spices with rich aroma and natural flavor. Packed hygienically to meet international
+                food safety standards.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6 col-lg-3">
+          <div class="pcard"><img
+              src="https://images.unsplash.com/photo-1466637574441-749b8f19452f?w=1200&q=85&fit=crop" alt="Herbs">
+            <div class="cb p-4">
+              <h3>Herbs</h3>
+              <p>Fresh and dried herbs with premium export quality. Naturally cultivated ensuring purity, freshness and
+                medicinal value.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6 col-lg-3">
+          <div class="pcard"><img
+              src="https://images.unsplash.com/photo-1769255484646-16988ad5552d?w=1200&q=85&fit=crop" alt="Dry Fruits">
+            <div class="cb p-4">
+              <h3>Dry Fruits</h3>
+              <p>High-quality dry fruits packed with nutrition and freshness. Carefully selected and processed
+                hygienically for worldwide supply.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6 col-lg-3">
+          <div class="pcard"><img
+              src="https://images.unsplash.com/photo-1586201375761-83865001e31c?w=1200&q=85&fit=crop"
+              alt="Pulses and Grains">
+            <div class="cb p-4">
+              <h3>Pulses &amp; Grains</h3>
+              <p>Superior quality Indian pulses cleaned and packed carefully. Rich in protein and nutrients for
+                international food markets.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6 col-lg-3">
+          <div class="pcard"><img
+              src="https://images.unsplash.com/photo-1627485937980-221c88ac04f9?w=1200&q=85&fit=crop" alt="Flours">
+            <div class="cb p-4">
+              <h3>Flours</h3>
+              <p>Finely processed premium flours from quality grains. Hygienically packed ensuring freshness and
+                consistency for global distribution.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6 col-lg-3">
+          <div class="pcard"><img
+              src="https://images.unsplash.com/photo-1615485290382-441e4d049cb5?w=1200&q=85&fit=crop"
+              alt="Dehydrated Products">
+            <div class="cb p-4">
+              <h3>Dehydrated Products</h3>
+              <p>Long shelf-life dehydrated export products processed with advanced techniques to preserve nutrition and
+                quality.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="cta-sec py-5 py-lg-6 text-center text-white">
+    <div class="inn container">
+      <h2 class="mb-3">Looking For Product Quotations?</h2>
+      <p class="mb-4 opacity-75">Contact our export team for bulk orders and international inquiries.</p><a
+        href="contact.html" class="btn btn-gold btn-lg px-5">Send Inquiry</a>
+    </div>
+  </section>
+  <footer class="footer py-5 text-center text-white">
+    <div class="container">
+      <h3 class="mb-2" style="font-family:'Playfair Display',serif">MiDi <span style="color:var(--gold)">EXPORTS</span>
+      </h3>
+      <p class="ftag mb-3">Global Export Solutions from India</p>
+      <div class="d-flex justify-content-center flex-wrap gap-4 mb-3">
+        <a href="../index.html">Home</a><a href="about.html">About Us</a><a href="products.html">Products</a><a
+          href="contact.html">Contact</a>
+      </div>
+      <p class="fcopy pt-3 mt-2 mb-0">Email: info@midiexports.com &nbsp;|&nbsp; &copy; 2026 MiDi Exports. All Rights
+        Reserved.</p>
+    </div>
+  </footer>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

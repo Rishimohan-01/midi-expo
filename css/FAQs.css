@@ -1,0 +1,50 @@
+@import url("base.css");
+.faq-banner {
+	background-image: url("../images/global-shipping.jpg");
+}
+.faq-section {
+	padding: var(--section-pad-v) var(--section-pad-h);
+}
+.faq-section .inner {
+	max-width: 820px;
+	margin: 0 auto;
+}
+.faq-list {
+	display: flex;
+	flex-direction: column;
+	gap: var(--sp-3);
+	margin-top: var(--sp-6);
+}
+.faq-item {
+	background: var(--color-white);
+	border: 1px solid var(--color-border);
+	border-radius: var(--radius-lg);
+	overflow: hidden;
+	transition: box-shadow var(--transition);
+}
+.faq-item:hover {
+	box-shadow: var(--shadow-sm);
+}
+.faq-question {
+	padding: var(--sp-4) var(--sp-5);
+	font-family: var(--font-heading);
+	font-size: var(--fs-md);
+	font-weight: 700;
+	color: var(--color-dark);
+	cursor: pointer;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+.faq-question::after {
+	content: "+";
+	font-size: var(--fs-xl);
+	color: var(--color-primary);
+	font-weight: 300;
+}
+.faq-answer {
+	padding: 0 var(--sp-5) var(--sp-4);
+	font-size: var(--fs-base);
+	color: var(--color-text-muted);
+	line-height: 1.8;
+}

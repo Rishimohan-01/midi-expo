@@ -1,0 +1,51 @@
+@import url("base.css");
+.machinery-banner {
+	background-image: url("../images/machinery bg.jpg");
+}
+.machinery-section {
+	padding: var(--section-pad-v) var(--section-pad-h);
+}
+.machinery-section .inner {
+	max-width: var(--max-width);
+	margin: 0 auto;
+}
+.machinery-grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+	gap: var(--sp-4);
+	margin-top: var(--sp-6);
+}
+.machinery-card {
+	background: var(--color-white);
+	border-radius: var(--radius-lg);
+	overflow: hidden;
+	box-shadow: var(--shadow-sm);
+	border: 1px solid var(--color-border);
+	transition:
+		transform var(--transition),
+		box-shadow var(--transition);
+}
+.machinery-card:hover {
+	transform: translateY(-6px);
+	box-shadow: var(--shadow-md);
+}
+.machinery-card img {
+	width: 100%;
+	height: 210px;
+	object-fit: cover;
+}
+.machinery-card-body {
+	padding: var(--sp-4);
+}
+.machinery-card h3 {
+	font-family: var(--font-heading);
+	font-size: var(--fs-lg);
+	font-weight: 700;
+	color: var(--color-dark);
+	margin-bottom: var(--sp-1);
+}
+.machinery-card p {
+	font-size: var(--fs-base);
+	color: var(--color-text-muted);
+	line-height: 1.7;
+}

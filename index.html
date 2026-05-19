@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css">
+  <title>MiDi Exports — Trusted Global Export Partner</title>
+  <style>
+    :root {
+      --gold: #D4A017;
+      --gold-dk: #b8880f;
+      --dark: #111111;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4 {
+      font-family: 'Playfair Display', serif;
+    }
+
+    /* NAVBAR */
+    .navbar-brand span {
+      color: var(--gold);
+    }
+
+    .navbar-nav .nav-link {
+      font-size: .85rem;
+      font-weight: 500;
+      letter-spacing: .3px;
+    }
+
+    .navbar-nav .nav-link:hover,
+    .navbar-nav .nav-link.active {
+      color: var(--gold) !important;
+    }
+
+    .navbar-nav .nav-link.active::after {
+      content: '';
+      display: block;
+      height: 2px;
+      background: var(--gold);
+      margin-top: 2px;
+      border-radius: 2px;
+    }
+
+    /* BUTTONS */
+    .btn-gold {
+      background: var(--gold);
+      color: #111;
+      font-weight: 700;
+      border: 2px solid var(--gold);
+      border-radius: 4px;
+      transition: .25s;
+    }
+
+    .btn-gold:hover {
+      background: var(--gold-dk);
+      border-color: var(--gold-dk);
+      color: #111;
+      transform: translateY(-2px);
+    }
+
+    .btn-outline-gold {
+      border: 2px solid rgba(255, 255, 255, .75);
+      color: #fff;
+      font-weight: 700;
+      border-radius: 4px;
+      transition: .25s;
+    }
+
+    .btn-outline-gold:hover {
+      background: #fff;
+      color: #111;
+      border-color: #fff;
+      transform: translateY(-2px);
+    }
+
+    /* SECTION TAG */
+    .section-tag {
+      font-size: .7rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--gold);
+    }
+
+    /* PAGE BANNER */
+    .page-banner {
+      margin-top: 70px;
+      height: 60vh;
+      min-height: 320px;
+      background-size: cover;
+      background-position: center;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+
+    .page-banner .overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, .55);
+    }
+
+    .page-banner .banner-content {
+      position: relative;
+      z-index: 2;
+      color: #fff;
+      padding: 0 1rem;
+    }
+
+    .page-banner .banner-content h1 {
+      font-size: clamp(2.2rem, 6vw, 4rem);
+      font-weight: 700;
+    }
+
+    .page-banner .banner-content p {
+      font-size: 1.1rem;
+      opacity: .88;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    /* CARDS */
+    .product-card {
+      border: 1px solid #e0e0e0;
+      border-radius: 12px;
+      overflow: hidden;
+      transition: .25s;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, .06);
+      height: 100%;
+    }
+
+    .product-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 6px 22px rgba(0, 0, 0, .12);
+    }
+
+    .product-card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+
+    .product-card .card-body h3 {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: #111;
+    }
+
+    .product-card .card-body p {
+      font-size: .9rem;
+      color: #666;
+      line-height: 1.8;
+    }
+
+    /* VALUE BOX */
+    .value-box {
+      background: #f6f6f6;
+      padding: 2rem;
+      border-radius: 12px;
+      border-left: 4px solid var(--gold);
+      transition: .25s;
+      height: 100%;
+    }
+
+    .value-box:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 4px 18px rgba(0, 0, 0, .1);
+    }
+
+    .value-box h3 {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: #111;
+      margin-bottom: .5rem;
+    }
+
+    .value-box p {
+      font-size: .9rem;
+      color: #666;
+      line-height: 1.8;
+      margin: 0;
+    }
+
+    /* FAQ */
+    .faq-item {
+      background: #fff;
+      border: 1px solid #e0e0e0;
+      border-radius: 12px;
+      overflow: hidden;
+      margin-bottom: 1rem;
+    }
+
+    .faq-question {
+      padding: 1.2rem 1.5rem;
+      font-family: 'Playfair Display', serif;
+      font-size: 1rem;
+      font-weight: 700;
+      color: #111;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .faq-question::after {
+      content: '+';
+      font-size: 1.5rem;
+      color: var(--gold);
+      font-weight: 300;
+    }
+
+    .faq-answer {
+      padding: 0 1.5rem 1.2rem;
+      font-size: .9rem;
+      color: #666;
+      line-height: 1.8;
+    }
+
+    /* FOOTER */
+    footer {
+      background: var(--dark);
+    }
+
+    footer .footer-tagline {
+      color: var(--gold);
+    }
+
+    footer a {
+      color: rgba(255, 255, 255, .65);
+      text-decoration: none;
+      transition: .25s;
+    }
+
+    footer a:hover {
+      color: var(--gold);
+    }
+
+    footer .footer-copy {
+      font-size: .75rem;
+      color: rgba(255, 255, 255, .35);
+      border-top: 1px solid rgba(255, 255, 255, .1);
+    }
+
+    /* CTA SECTION */
+    .cta-section {
+      background: var(--dark);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cta-section::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: url('https://images.unsplash.com/photo-1578575437130-527eed3abbec?q=80&w=1200&auto=format&fit=crop') center/cover;
+      opacity: .15;
+    }
+
+    .cta-section .inner {
+      position: relative;
+      z-index: 2;
+    }
+
+    /* SERVICE CARD */
+    .service-card {
+      background: #fff;
+      border: 1px solid #e0e0e0;
+      border-radius: 12px;
+      padding: 2rem;
+      transition: .25s;
+      height: 100%;
+    }
+
+    .service-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 5px 20px rgba(0, 0, 0, .1);
+    }
+
+    /* MISSION BOX */
+    .mission-box {
+      background: #fff;
+      border-radius: 12px;
+      padding: 2rem;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, .07);
+      border: 1px solid #e0e0e0;
+      height: 100%;
+      text-align: center;
+    }
+
+    .mission-box img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 8px;
+      margin-bottom: 1.2rem;
+    }
+
+    /* COUNTRY BOX */
+    .country-box {
+      background: #f6f6f6;
+      padding: .6rem 1.2rem;
+      border-radius: 6px;
+      border-left: 3px solid var(--gold);
+      font-size: .85rem;
+      font-weight: 600;
+      color: #111;
+      display: inline-block;
+    }
+  </style>
+</head>
+
+<body>
+
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top shadow-sm" style="height:70px">
+    <div class="container-fluid px-4">
+      <a class="navbar-brand fw-bold fs-5" style="font-family:'Playfair Display',serif" href="index.html">MiDi
+        <span>EXPORTS</span></a>
+      <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navMain">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navMain">
+        <ul class="navbar-nav ms-auto gap-1">
+          <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="pages/about.html">About Us</a></li>
+          <li class="nav-item"><a class="nav-link" href="pages/products.html">Products</a></li>
+          <li class="nav-item"><a class="nav-link" href="pages/infrastructure.html">Infrastructure</a></li>
+          <li class="nav-item"><a class="nav-link" href="pages/machinery.html">Machinery</a></li>
+          <li class="nav-item"><a class="nav-link" href="pages/export-market.html">Export Markets</a></li>
+          <li class="nav-item"><a class="nav-link" href="pages/FAQs.html">FAQs</a></li>
+          <li class="nav-item"><a class="nav-link" href="pages/contact.html">Contact Us</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section
+    style="height:100vh;min-height:560px;background:url('https://images.unsplash.com/photo-1494412519320-aa613dfb7738?q=80&w=1400&auto=format&fit=crop') center/cover no-repeat;display:flex;align-items:center;justify-content:center;text-align:center;position:relative;">
+    <div style="position:absolute;inset:0;background:linear-gradient(to bottom,rgba(0,0,0,.62),rgba(0,0,0,.38))"></div>
+    <div style="position:relative;z-index:2;color:#fff;max-width:860px;padding:0 1.5rem">
+      <span
+        class="section-tag d-inline-block bg-dark bg-opacity-50 border border-warning border-opacity-50 rounded-pill px-3 py-1 mb-3">India's
+        Trusted Export Company</span>
+      <h1 class="display-4 fw-bold mb-3" style="line-height:1.15">Trusted Global Export Partner</h1>
+      <p class="fs-5 mb-4 opacity-75 mx-auto" style="max-width:600px">Delivering premium Indian products worldwide with
+        quality, reliability and international export standards.</p>
+      <div class="d-flex justify-content-center flex-wrap gap-3">
+        <a href="pages/products.html" class="btn btn-gold btn-lg px-4">Explore Products</a>
+        <a href="pages/contact.html" class="btn btn-outline-gold btn-lg px-4">Contact Us</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="py-5 py-lg-6">
+    <div class="container py-3">
+      <div class="row align-items-center g-5">
+        <div class="col-lg-6">
+          <img src="https://images.unsplash.com/photo-1578575437130-527eed3abbec?w=1200&q=85&fit=crop"
+            alt="MiDi Exports" class="img-fluid rounded-3 shadow-lg w-100" style="aspect-ratio:4/3;object-fit:cover">
+        </div>
+        <div class="col-lg-6">
+          <span class="section-tag d-block mb-2">Who We Are</span>
+          <h2 class="mb-3">About MiDi Exports</h2>
+          <p class="text-muted fs-5 lh-lg mb-3">MiDi Exports is a leading Indian export company committed to supplying
+            high-quality industrial and commercial products to global markets.</p>
+          <p class="text-muted lh-lg mb-4">We focus on quality assurance, timely delivery, professional packaging and
+            long-term international business relationships.</p>
+          <a href="pages/about.html" class="btn btn-gold px-4">Read More</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section class="py-5 py-lg-6 bg-light">
+    <div class="container py-3">
+      <div class="text-center mb-5">
+        <span class="section-tag d-block mb-2">What We Offer</span>
+        <h2>Our Export Categories</h2>
+      </div>
+      <div class="row g-4">
+        <div class="col-md-4">
+          <div class="service-card text-center">
+            <div class="mb-3 fs-2">🏭</div>
+            <h3 class="fs-5 fw-bold mb-2">Industrial Products</h3>
+            <p class="text-muted small mb-0">Exporting premium industrial and manufacturing products with international
+              quality standards.</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="service-card text-center">
+            <div class="mb-3 fs-2">🌾</div>
+            <h3 class="fs-5 fw-bold mb-2">Agricultural Products</h3>
+            <p class="text-muted small mb-0">Supplying quality agro and food products to global buyers and distributors
+              worldwide.</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="service-card text-center">
+            <div class="mb-3 fs-2">📦</div>
+            <h3 class="fs-5 fw-bold mb-2">Custom Export Solutions</h3>
+            <p class="text-muted small mb-0">Customized packaging, documentation and shipment solutions for worldwide
+              clients.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer py-5 text-center text-white">
+    <div class="container">
+      <h3 class="mb-2" style="font-family:'Playfair Display',serif">MiDi <span style="color:var(--gold)">EXPORTS</span>
+      </h3>
+      <p class="footer-tagline mb-3">Global Export Solutions from India</p>
+      <div class="d-flex justify-content-center flex-wrap gap-4 mb-3">
+        <a href="index.html">Home</a>
+        <a href="pages/about.html">About Us</a>
+        <a href="pages/products.html">Products</a>
+        <a href="pages/contact.html">Contact</a>
+      </div>
+      <p class="footer-copy pt-3 mt-2 mb-0">Email: info@midiexports.com &nbsp;|&nbsp; &copy; 2026 MiDi Exports. All
+        Rights Reserved.</p>
+    </div>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
