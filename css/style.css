@@ -19,7 +19,7 @@
 
 .hero-overlay {
 	position: absolute;
-	inset: 0;
+	inset: 0;	
 	background: linear-gradient(
 		to bottom,
 		rgba(0, 0, 0, 0.62),
@@ -30,7 +30,6 @@
 .hero-content {
 	position: relative;
 	z-index: 2;
-	color: var(--color-white);
 	max-width: 860px;
 	padding: 0 var(--sp-4);
 }
@@ -39,30 +38,30 @@
 	display: inline-block;
 	font-size: var(--fs-xs);
 	font-weight: var(--fw-bold);
-	letter-spacing: 3px;
+	letter-spacing: 2px;
 	text-transform: uppercase;
 	color: var(--color-primary);
 	margin-bottom: var(--sp-2);
-	background: rgba(212, 160, 23, 0.12);
-	border: 1px solid rgba(212, 160, 23, 0.35);
-	padding: 5px 14px;
+	background: rgba(var(--bs-dark-rgb), var(--bs-bg-opacity)) !important;
+	border: 1px solid var(--color-primary);
+	padding: 4px 16px;
 	border-radius: 20px;
 }
 
 .hero-content h1 {
 	font-family: var(--font-heading);
-	font-size: clamp(2.5rem, 6vw, 4.5rem);
+	color: var(--color-white);
+	font-size: 3.5rem;
 	font-weight: 700;
 	line-height: 1.15;
-	margin-bottom: var(--sp-3);
+	margin-bottom: var(--sp-2);
 }
 
 .hero-content p {
-	font-size: clamp(1rem, 2vw, 1.125rem);
-	line-height: 1.8;
+	font-size: 1.25rem;
 	color: rgba(255, 255, 255, 0.86);
 	max-width: 600px;
-	margin: 0 auto var(--sp-5);
+	margin: 0 auto var(--sp-3);
 }
 
 .hero-buttons {
@@ -135,7 +134,7 @@
 
 .service-card {
 	background: var(--color-white);
-	padding: var(--sp-6) var(--sp-5);
+	padding: var(--sp-4);
 	border-radius: var(--radius-lg);
 	box-shadow: var(--shadow-sm);
 	border: 1px solid var(--color-border);
@@ -143,6 +142,7 @@
 		transform var(--transition),
 		box-shadow var(--transition);
 	text-align: left;
+	height: 100%;
 }
 
 .service-card:hover {
@@ -153,7 +153,7 @@
 .service-card h3 {
 	font-family: var(--font-heading);
 	font-size: var(--fs-lg);
-	font-weight: 700;
+	font-weight: var(--fw-bold);
 	color: var(--color-dark);
 	margin-bottom: var(--sp-2);
 }

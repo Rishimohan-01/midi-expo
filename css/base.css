@@ -26,6 +26,13 @@ body {
 	background: var(--color-bg);
 }
 
+h1,
+h2,
+h3,
+h4 {
+	font-family: var(--font-heading);
+}
+
 img {
 	display: block;
 	max-width: 100%;
@@ -69,46 +76,18 @@ ul {
 	color: var(--color-primary);
 }
 
-.navbar ul {
-	display: flex;
-	gap: var(--sp-4);
-	align-items: center;
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link.active {
+	color: var(--color-primary) !important;
 }
 
-.navbar ul li a {
-	font-size: var(--fs-sm);
-	font-weight: var(--fw-medium);
-	color: rgba(255, 255, 255, 0.88);
-	letter-spacing: 0.3px;
-	transition: color var(--transition);
-	padding: var(--sp-1) 0;
-	position: relative;
-}
-
-.navbar ul li a::after {
+.navbar-nav .nav-link.active::after {
 	content: "";
-	position: absolute;
-	bottom: -2px;
-	left: 0;
-	width: 0;
+	display: block;
 	height: 2px;
 	background: var(--color-primary);
-	transition: width var(--transition);
-}
-
-.navbar ul li a:hover {
-	color: var(--color-primary);
-}
-.navbar ul li a:hover::after {
-	width: 100%;
-}
-
-/* Active link */
-.navbar ul li a.active {
-	color: var(--color-primary);
-}
-.navbar ul li a.active::after {
-	width: 100%;
+	margin-top: 2px;
+	border-radius: 2px;
 }
 
 /* -------- Buttons -------- */
@@ -117,10 +96,9 @@ ul {
 	background: var(--color-primary);
 	color: var(--color-dark);
 	font-family: var(--font-body);
-	font-size: var(--fs-sm);
+	font-size: var(--fs-base);
 	font-weight: var(--fw-bold);
 	letter-spacing: 0.5px;
-	padding: 14px 32px;
 	border-radius: var(--radius-sm);
 	border: 2px solid var(--color-primary);
 	cursor: pointer;
@@ -141,10 +119,9 @@ ul {
 	background: transparent;
 	color: var(--color-white);
 	font-family: var(--font-body);
-	font-size: var(--fs-sm);
+	font-size: var(--fs-base);
 	font-weight: var(--fw-bold);
 	letter-spacing: 0.5px;
-	padding: 14px 32px;
 	border-radius: var(--radius-sm);
 	border: 2px solid rgba(255, 255, 255, 0.75);
 	cursor: pointer;
@@ -244,6 +221,20 @@ ul {
 	padding: var(--sp-8) var(--sp-6);
 }
 
+.navbar-brand img {
+	height: 42px;
+	width: 42px;
+	object-fit: contain;
+	border-radius: 50%;
+	background: #fff;
+	padding: 3px;
+}
+
+.footer img {
+	display: block;
+	margin: 0 auto;
+}
+
 .footer h3 {
 	font-family: var(--font-heading);
 	font-size: var(--fs-xl);
@@ -253,7 +244,6 @@ ul {
 
 .footer .footer-tagline {
 	font-size: var(--fs-md);
-	color: var(--color-primary);
 	margin-bottom: var(--sp-4);
 }
 

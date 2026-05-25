@@ -10,316 +10,272 @@
     href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap"
     rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
   <title>MiDi Exports — Trusted Global Export Partner</title>
+
+  <link rel="stylesheet" href="css/style.css">
+
   <style>
-    :root {
-      --gold: #D4A017;
-      --gold-dk: #b8880f;
-      --dark: #111111;
-    }
-
-    body {
-      font-family: 'Inter', sans-serif;
-    }
-
-    h1,
-    h2,
-    h3,
-    h4 {
-      font-family: 'Playfair Display', serif;
-    }
-
-    /* NAVBAR */
-    .navbar-brand span {
-      color: var(--gold);
-    }
-
-    .navbar-nav .nav-link {
-      font-size: .85rem;
-      font-weight: 500;
-      letter-spacing: .3px;
-    }
-
-    .navbar-nav .nav-link:hover,
-    .navbar-nav .nav-link.active {
-      color: var(--gold) !important;
-    }
-
-    .navbar-nav .nav-link.active::after {
-      content: '';
-      display: block;
-      height: 2px;
-      background: var(--gold);
-      margin-top: 2px;
-      border-radius: 2px;
-    }
-
-    /* BUTTONS */
-    .btn-gold {
-      background: var(--gold);
-      color: #111;
-      font-weight: 700;
-      border: 2px solid var(--gold);
-      border-radius: 4px;
-      transition: .25s;
-    }
-
-    .btn-gold:hover {
-      background: var(--gold-dk);
-      border-color: var(--gold-dk);
-      color: #111;
-      transform: translateY(-2px);
-    }
-
-    .btn-outline-gold {
-      border: 2px solid rgba(255, 255, 255, .75);
-      color: #fff;
-      font-weight: 700;
-      border-radius: 4px;
-      transition: .25s;
-    }
-
-    .btn-outline-gold:hover {
-      background: #fff;
-      color: #111;
-      border-color: #fff;
-      transform: translateY(-2px);
-    }
-
-    /* SECTION TAG */
-    .section-tag {
-      font-size: .7rem;
-      font-weight: 700;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      color: var(--gold);
-    }
-
-    /* PAGE BANNER */
-    .page-banner {
-      margin-top: 70px;
-      height: 60vh;
+    /* ========== HERO SLIDER (40vh) ========== */
+    .hero-slider {
+      position: relative;
+      height: 40vh;
       min-height: 320px;
+      overflow: hidden;
+      margin-top: 70px;
+      /* navbar offset */
+    }
+
+    .slide {
+      position: absolute;
+      inset: 0;
       background-size: cover;
       background-position: center;
-      position: relative;
+      opacity: 0;
+      transition: opacity 0.9s ease;
+      z-index: 0;
+    }
+
+    .slide.active {
+      opacity: 1;
+      z-index: 1;
+    }
+
+    .slide-1 {
+      background-image: url('https://images.unsplash.com/photo-1494412519320-aa613dfb7738?q=80&w=1400&auto=format&fit=crop');
+    }
+
+    .slide-2 {
+      background-image: url('https://images.unsplash.com/photo-1578575437130-527eed3abbec?q=80&w=1400&auto=format&fit=crop');
+    }
+
+    .slide-3 {
+      background-image: url('https://images.unsplash.com/photo-1532996122724-e3c354a0b15b?q=80&w=1400&auto=format&fit=crop');
+    }
+
+    .slide-4 {
+      background-image: url('https://images.unsplash.com/photo-1511690743698-d9d85f2fbf38?q=80&w=1400&auto=format&fit=crop');
+    }
+
+    .slide-5 {
+      background-image: url('https://images.unsplash.com/photo-1611117775350-ac3950990985?q=80&w=1400&auto=format&fit=crop');
+    }
+
+    .slide-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to bottom, rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.30));
+      z-index: 2;
+    }
+
+    .slide-content {
+      position: absolute;
+      inset: 0;
+      z-index: 3;
       display: flex;
+      flex-direction: column;
       align-items: center;
       justify-content: center;
       text-align: center;
+      padding: 0 1.5rem;
     }
 
-    .page-banner .overlay {
-      position: absolute;
-      inset: 0;
-      background: rgba(0, 0, 0, .55);
-    }
-
-    .page-banner .banner-content {
-      position: relative;
-      z-index: 2;
-      color: #fff;
-      padding: 0 1rem;
-    }
-
-    .page-banner .banner-content h1 {
-      font-size: clamp(2.2rem, 6vw, 4rem);
+    .slide-content .hero-tag {
+      display: inline-block;
+      font-size: 0.72rem;
       font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: #d4a017;
+      background: rgba(33, 37, 41, 0.5);
+      border: 1px solid #d4a017;
+      padding: 3px 14px;
+      border-radius: 20px;
+      margin-bottom: 0.75rem;
     }
 
-    .page-banner .banner-content p {
+    .slide-content h1 {
+      font-family: 'Playfair Display', serif;
+      color: #fff;
+      font-size: clamp(1.6rem, 4vw, 2.8rem);
+      font-weight: 700;
+      line-height: 1.2;
+      margin-bottom: 0.5rem;
+    }
+
+    .slide-content p {
+      font-size: clamp(0.9rem, 1.8vw, 1.1rem);
+      color: rgba(255, 255, 255, 0.88);
+      max-width: 580px;
+      margin: 0 auto 1rem;
+    }
+
+    .hero-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    /* Slider arrows */
+    .slider-arrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 10;
+      background: rgba(0, 0, 0, 0.45);
+      border: none;
+      color: #fff;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
       font-size: 1.1rem;
-      opacity: .88;
-      max-width: 600px;
-      margin: 0 auto;
+      cursor: pointer;
+      transition: background 0.25s;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
 
-    /* CARDS */
+    .slider-arrow:hover {
+      background: rgba(212, 160, 23, 0.85);
+    }
+
+    .slider-prev {
+      left: 14px;
+    }
+
+    .slider-next {
+      right: 14px;
+    }
+
+    /* Slider dots */
+    .slider-dots {
+      position: absolute;
+      bottom: 14px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 10;
+      display: flex;
+      gap: 8px;
+    }
+
+    .dot {
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.5);
+      cursor: pointer;
+      transition: background 0.25s, transform 0.25s;
+      border: none;
+      padding: 0;
+    }
+
+    .dot.active {
+      background: #d4a017;
+      transform: scale(1.3);
+    }
+
+    /* ========== WHY CHOOSE US ========== */
+    .why-us-card {
+      background: #fff;
+      border-radius: 12px;
+      padding: 2rem 1.5rem;
+      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.07);
+      border: 1px solid #e8e8e8;
+      text-align: center;
+      transition: transform 0.28s, box-shadow 0.28s;
+      height: 100%;
+    }
+
+    .why-us-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 8px 28px rgba(0, 0, 0, 0.12);
+    }
+
+    .why-us-icon {
+      width: 62px;
+      height: 62px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #d4a017 0%, #f0c040 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 1.1rem;
+      font-size: 1.6rem;
+    }
+
+    /* ========== PRODUCTS PREVIEW ========== */
     .product-card {
-      border: 1px solid #e0e0e0;
       border-radius: 12px;
       overflow: hidden;
-      transition: .25s;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, .06);
+      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+      border: 1px solid #e8e8e8;
+      transition: transform 0.28s, box-shadow 0.28s;
+      background: #fff;
       height: 100%;
     }
 
     .product-card:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 6px 22px rgba(0, 0, 0, .12);
+      transform: translateY(-5px);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.13);
     }
 
     .product-card img {
       width: 100%;
       height: 200px;
       object-fit: cover;
+      display: block;
     }
 
-    .product-card .card-body h3 {
-      font-size: 1.1rem;
+    .product-card-body {
+      padding: 1.2rem 1.3rem 1.4rem;
+    }
+
+    .product-badge {
+      font-size: 0.7rem;
       font-weight: 700;
-      color: #111;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: #d4a017;
+      margin-bottom: 0.4rem;
+      display: block;
     }
 
-    .product-card .card-body p {
-      font-size: .9rem;
-      color: #666;
-      line-height: 1.8;
-    }
-
-    /* VALUE BOX */
-    .value-box {
-      background: #f6f6f6;
-      padding: 2rem;
-      border-radius: 12px;
-      border-left: 4px solid var(--gold);
-      transition: .25s;
-      height: 100%;
-    }
-
-    .value-box:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 4px 18px rgba(0, 0, 0, .1);
-    }
-
-    .value-box h3 {
-      font-size: 1.1rem;
+    /* ========== SHARED HELPERS ========== */
+    .section-tag {
+      font-size: 0.75rem;
       font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: #d4a017;
+    }
+
+    .btn-gold {
+      background: #d4a017;
       color: #111;
-      margin-bottom: .5rem;
-    }
-
-    .value-box p {
-      font-size: .9rem;
-      color: #666;
-      line-height: 1.8;
-      margin: 0;
-    }
-
-    /* FAQ */
-    .faq-item {
-      background: #fff;
-      border: 1px solid #e0e0e0;
-      border-radius: 12px;
-      overflow: hidden;
-      margin-bottom: 1rem;
-    }
-
-    .faq-question {
-      padding: 1.2rem 1.5rem;
-      font-family: 'Playfair Display', serif;
-      font-size: 1rem;
-      font-weight: 700;
-      color: #111;
-      cursor: pointer;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    .faq-question::after {
-      content: '+';
-      font-size: 1.5rem;
-      color: var(--gold);
-      font-weight: 300;
-    }
-
-    .faq-answer {
-      padding: 0 1.5rem 1.2rem;
-      font-size: .9rem;
-      color: #666;
-      line-height: 1.8;
-    }
-
-    /* FOOTER */
-    footer {
-      background: var(--dark);
-    }
-
-    footer .footer-tagline {
-      color: var(--gold);
-    }
-
-    footer a {
-      color: rgba(255, 255, 255, .65);
-      text-decoration: none;
-      transition: .25s;
-    }
-
-    footer a:hover {
-      color: var(--gold);
-    }
-
-    footer .footer-copy {
-      font-size: .75rem;
-      color: rgba(255, 255, 255, .35);
-      border-top: 1px solid rgba(255, 255, 255, .1);
-    }
-
-    /* CTA SECTION */
-    .cta-section {
-      background: var(--dark);
-      position: relative;
-      overflow: hidden;
-    }
-
-    .cta-section::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: url('https://images.unsplash.com/photo-1578575437130-527eed3abbec?q=80&w=1200&auto=format&fit=crop') center/cover;
-      opacity: .15;
-    }
-
-    .cta-section .inner {
-      position: relative;
-      z-index: 2;
-    }
-
-    /* SERVICE CARD */
-    .service-card {
-      background: #fff;
-      border: 1px solid #e0e0e0;
-      border-radius: 12px;
-      padding: 2rem;
-      transition: .25s;
-      height: 100%;
-    }
-
-    .service-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 5px 20px rgba(0, 0, 0, .1);
-    }
-
-    /* MISSION BOX */
-    .mission-box {
-      background: #fff;
-      border-radius: 12px;
-      padding: 2rem;
-      box-shadow: 0 2px 10px rgba(0, 0, 0, .07);
-      border: 1px solid #e0e0e0;
-      height: 100%;
-      text-align: center;
-    }
-
-    .mission-box img {
-      width: 100%;
-      height: 200px;
-      object-fit: cover;
-      border-radius: 8px;
-      margin-bottom: 1.2rem;
-    }
-
-    /* COUNTRY BOX */
-    .country-box {
-      background: #f6f6f6;
-      padding: .6rem 1.2rem;
-      border-radius: 6px;
-      border-left: 3px solid var(--gold);
-      font-size: .85rem;
       font-weight: 600;
+      border: none;
+      transition: background 0.25s;
+    }
+
+    .btn-gold:hover {
+      background: #b8880f;
       color: #111;
-      display: inline-block;
+    }
+
+    .btn-outline-gold {
+      border: 2px solid var(--color-white);
+      color: var(--color-white);
+      font-weight: 600;
+      background: transparent;
+      transition: all 0.25s;
+    }
+
+    .btn-outline-gold:hover {
+      border: 2px solid var(--color-white);
+      background: var(--color-white);
+      color: #111;
     }
   </style>
 </head>
@@ -328,8 +284,12 @@
 
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top shadow-sm" style="height:70px">
     <div class="container-fluid px-4">
-      <a class="navbar-brand fw-bold fs-5" style="font-family:'Playfair Display',serif" href="index.html">MiDi
-        <span>EXPORTS</span></a>
+      <a class="navbar-brand d-flex align-items-center gap-2" href="index.html" style="text-decoration:none">
+        <img src="images/Gif-Logo-Circle.gif" alt="MiDi Exports Logo"
+          style="height:52px;width:52px;object-fit:contain;border-radius:50%;background:#fff;padding:2px;flex-shrink:0;">
+        <span class="fw-bold fs-5" style="font-family:'Playfair Display',serif;color:#fff;line-height:1.1">MiDi
+          <span style="color:#d4a017;font-size:fs-5;letter-spacing:2px;font-weight:700">EXPORTS</span></span>
+      </a>
       <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navMain">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -348,23 +308,91 @@
     </div>
   </nav>
 
-  <!-- HERO -->
-  <section
-    style="height:100vh;min-height:560px;background:url('https://images.unsplash.com/photo-1494412519320-aa613dfb7738?q=80&w=1400&auto=format&fit=crop') center/cover no-repeat;display:flex;align-items:center;justify-content:center;text-align:center;position:relative;">
-    <div style="position:absolute;inset:0;background:linear-gradient(to bottom,rgba(0,0,0,.62),rgba(0,0,0,.38))"></div>
-    <div style="position:relative;z-index:2;color:#fff;max-width:860px;padding:0 1.5rem">
-      <span
-        class="section-tag d-inline-block bg-dark bg-opacity-50 border border-warning border-opacity-50 rounded-pill px-3 py-1 mb-3">India's
-        Trusted Export Company</span>
-      <h1 class="display-4 fw-bold mb-3" style="line-height:1.15">Trusted Global Export Partner</h1>
-      <p class="fs-5 mb-4 opacity-75 mx-auto" style="max-width:600px">Delivering premium Indian products worldwide with
-        quality, reliability and international export standards.</p>
-      <div class="d-flex justify-content-center flex-wrap gap-3">
-        <a href="pages/products.html" class="btn btn-gold btn-lg px-4">Explore Products</a>
-        <a href="pages/contact.html" class="btn btn-outline-gold btn-lg px-4">Contact Us</a>
+  <!-- ===================== HERO SLIDER (40vh) ===================== -->
+  <section class="hero-slider">
+
+    <!-- Slide 1 -->
+    <div class="slide slide-1 active">
+      <div class="slide-overlay"></div>
+      <div class="slide-content">
+        <span class="hero-tag">India's Trusted Export Company</span>
+        <h1>Trusted Global Export Partner</h1>
+        <p>Delivering premium Indian products worldwide with quality, reliability and international standards.</p>
+        <div class="hero-buttons">
+          <a href="pages/products.html" class="btn btn-gold btn-lg px-4">Explore Products</a>
+          <a href="pages/contact.html" class="btn btn-outline-gold btn-lg px-4">Contact Us</a>
+        </div>
       </div>
     </div>
+
+    <!-- Slide 2 -->
+    <div class="slide slide-2">
+      <div class="slide-overlay"></div>
+      <div class="slide-content">
+        <span class="hero-tag">Agricultural Excellence</span>
+        <h1>Premium Agro Products</h1>
+        <p>From spices to grains, pulses to fresh produce — quality assured from farm to global markets.</p>
+        <div class="hero-buttons">
+          <a href="pages/products.html" class="btn btn-gold btn-lg px-4">View Products</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Slide 3 -->
+    <div class="slide slide-3">
+      <div class="slide-overlay"></div>
+      <div class="slide-content">
+        <span class="hero-tag">Sustainable Exports</span>
+        <h1>Global Shipping Solutions</h1>
+        <p>Reliable supply chain, professional packaging and seamless logistics to 30+ countries.</p>
+        <div class="hero-buttons">
+          <a href="pages/export-market.html" class="btn btn-gold btn-lg px-4">Our Markets</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Slide 4 -->
+    <div class="slide slide-4">
+      <div class="slide-overlay"></div>
+      <div class="slide-content">
+        <span class="hero-tag">Food & Nutrition</span>
+        <h1>Fresh Fruits & Vegetables</h1>
+        <p>Handpicked and carefully packed seasonal produce meeting international phytosanitary standards.</p>
+        <div class="hero-buttons">
+          <a href="pages/products.html" class="btn btn-gold btn-lg px-4">Browse Range</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Slide 5 -->
+    <div class="slide slide-5">
+      <div class="slide-overlay"></div>
+      <div class="slide-content">
+        <span class="hero-tag">Industrial Strength</span>
+        <h1>Advanced Machinery & Equipment</h1>
+        <p>State-of-the-art industrial machinery exported to manufacturing hubs across the globe.</p>
+        <div class="hero-buttons">
+          <a href="pages/machinery.html" class="btn btn-gold btn-lg px-4">See Machinery</a>
+          <a href="pages/contact.html" class="btn btn-outline-gold btn-lg px-4">Get a Quote</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Controls -->
+    <button class="slider-arrow slider-prev" id="sliderPrev" aria-label="Previous">&#8249;</button>
+    <button class="slider-arrow slider-next" id="sliderNext" aria-label="Next">&#8250;</button>
+
+    <div class="slider-dots" id="sliderDots">
+      <button class="dot active" data-index="0" aria-label="Slide 1"></button>
+      <button class="dot" data-index="1" aria-label="Slide 2"></button>
+      <button class="dot" data-index="2" aria-label="Slide 3"></button>
+      <button class="dot" data-index="3" aria-label="Slide 4"></button>
+      <button class="dot" data-index="4" aria-label="Slide 5"></button>
+    </div>
+
   </section>
+  <!-- ============================================================== -->
+
 
   <!-- ABOUT -->
   <section class="py-5 py-lg-6">
@@ -376,7 +404,7 @@
         </div>
         <div class="col-lg-6">
           <span class="section-tag d-block mb-2">Who We Are</span>
-          <h2 class="mb-3">About MiDi Exports</h2>
+          <h2 class="mb-3" style="font-family:'Playfair Display',serif">About MiDi Exports</h2>
           <p class="text-muted fs-5 lh-lg mb-3">MiDi Exports is a leading Indian export company committed to supplying
             high-quality industrial and commercial products to global markets.</p>
           <p class="text-muted lh-lg mb-4">We focus on quality assurance, timely delivery, professional packaging and
@@ -392,12 +420,12 @@
     <div class="container py-3">
       <div class="text-center mb-5">
         <span class="section-tag d-block mb-2">What We Offer</span>
-        <h2>Our Export Categories</h2>
+        <h2 style="font-family:'Playfair Display',serif">Our Export Categories</h2>
       </div>
       <div class="row g-4">
         <div class="col-md-4">
           <div class="service-card text-center">
-            <div class="mb-3 fs-2">🏭</div>
+            <div class="mb-3 fs-2"><i class="bi bi-buildings"></i></div>
             <h3 class="fs-5 fw-bold mb-2">Industrial Products</h3>
             <p class="text-muted small mb-0">Exporting premium industrial and manufacturing products with international
               quality standards.</p>
@@ -405,7 +433,7 @@
         </div>
         <div class="col-md-4">
           <div class="service-card text-center">
-            <div class="mb-3 fs-2">🌾</div>
+            <div class="mb-3 fs-2"><i class="bi bi-tree-fill"></i></div>
             <h3 class="fs-5 fw-bold mb-2">Agricultural Products</h3>
             <p class="text-muted small mb-0">Supplying quality agro and food products to global buyers and distributors
               worldwide.</p>
@@ -413,7 +441,7 @@
         </div>
         <div class="col-md-4">
           <div class="service-card text-center">
-            <div class="mb-3 fs-2">📦</div>
+            <div class="mb-3 fs-2"><i class="bi bi-box"></i></div>
             <h3 class="fs-5 fw-bold mb-2">Custom Export Solutions</h3>
             <p class="text-muted small mb-0">Customized packaging, documentation and shipment solutions for worldwide
               clients.</p>
@@ -423,23 +451,132 @@
     </div>
   </section>
 
-  <footer class="footer py-5 text-center text-white">
-    <div class="container">
-      <h3 class="mb-2" style="font-family:'Playfair Display',serif">MiDi <span style="color:var(--gold)">EXPORTS</span>
-      </h3>
-      <p class="footer-tagline mb-3">Global Export Solutions from India</p>
-      <div class="d-flex justify-content-center flex-wrap gap-4 mb-3">
-        <a href="index.html">Home</a>
-        <a href="pages/about.html">About Us</a>
-        <a href="pages/products.html">Products</a>
-        <a href="pages/contact.html">Contact</a>
+
+  <!-- ===================== WHY CHOOSE US ===================== -->
+  <section class="py-5 py-lg-6">
+    <div class="container py-3">
+      <div class="text-center mb-5">
+        <span class="section-tag d-block mb-2">Our Strengths</span>
+        <h2 style="font-family:'Playfair Display',serif">Why Choose MiDi Exports?</h2>
+        <p class="text-muted mt-2 mx-auto" style="max-width:540px">We combine decades of expertise with modern
+          infrastructure to deliver unmatched export services.</p>
       </div>
-      <p class="footer-copy pt-3 mt-2 mb-0">Email: info@midiexports.com &nbsp;|&nbsp; &copy; 2026 MiDi Exports. All
-        Rights Reserved.</p>
+      <div class="row g-4">
+        <div class="col-sm-6 col-lg-3">
+          <div class="why-us-card">
+            <div class="why-us-icon"><i class="bi bi-trophy"></i></i></div>
+            <h5 class="fw-bold mb-2" style="font-family:'Playfair Display',serif">Certified Quality</h5>
+            <p class="text-muted small mb-0">All products are inspected and certified to meet international food safety
+              and quality standards.</p>
+          </div>
+        </div>
+        <div class="col-sm-6 col-lg-3">
+          <div class="why-us-card">
+            <div class="why-us-icon"><i class="bi bi-globe-central-south-asia"></i></div>
+            <h5 class="fw-bold mb-2" style="font-family:'Playfair Display',serif">Global Reach</h5>
+            <p class="text-muted small mb-0">Established distribution network across Asia, Europe, Middle East, and
+              the Americas.</p>
+          </div>
+        </div>
+        <div class="col-sm-6 col-lg-3">
+          <div class="why-us-card">
+            <div class="why-us-icon"><i class="bi bi-lightning-charge-fill"></i></div>
+            <h5 class="fw-bold mb-2" style="font-family:'Playfair Display',serif">Timely Delivery</h5>
+            <p class="text-muted small mb-0">Streamlined logistics ensure on-time shipments with full tracking and
+              end-to-end support.</p>
+          </div>
+        </div>
+        <div class="col-sm-6 col-lg-3">
+          <div class="why-us-card">
+            <div class="why-us-icon"><i class="bi bi-person-raised-hand"></i></div>
+            <h5 class="fw-bold mb-2" style="font-family:'Playfair Display',serif">Dedicated Support</h5>
+            <p class="text-muted small mb-0">A dedicated relationship manager for every client ensuring smooth
+              transactions and communication.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- ========================================================= -->
+
+
+  <!-- ===================== FEATURED PRODUCTS ===================== -->
+  <section class="py-5 py-lg-6 bg-light">
+    <div class="container py-3">
+      <div class="text-center mb-5">
+        <span class="section-tag d-block mb-2">Our Range</span>
+        <h2 style="font-family:'Playfair Display',serif">Featured Product Categories</h2>
+        <p class="text-muted mt-2 mx-auto" style="max-width:520px">Explore our diverse range of export-quality products
+          sourced directly from India's finest producers.</p>
+      </div>
+      <div class="row g-4">
+        <div class="col-md-6 col-lg-4">
+          <div class="product-card">
+            <img src="https://images.unsplash.com/photo-1596040033229-a9821ebd058d?w=600&q=80&fit=crop" alt="Spices">
+            <div class="product-card-body">
+              <span class="product-badge">Agricultural</span>
+              <h5 class="fw-bold mb-1" style="font-family:'Playfair Display',serif">Spices & Herbs</h5>
+              <p class="text-muted small mb-3">Premium turmeric, cumin, coriander, cardamom and 50+ aromatic
+                spices.</p>
+              <a href="pages/products.html" class="btn btn-gold btn-sm px-3">View Details</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4">
+          <div class="product-card">
+            <img src="https://images.unsplash.com/photo-1515543237350-b3eea1ec8082?w=600&q=80&fit=crop" alt="Pulses">
+            <div class="product-card-body">
+              <span class="product-badge">Agricultural</span>
+              <h5 class="fw-bold mb-1" style="font-family:'Playfair Display',serif">Pulses & Grains</h5>
+              <p class="text-muted small mb-3">Lentils, chickpeas, toor dal, moong, rice and wheat in bulk and
+                retail packs.</p>
+              <a href="pages/products.html" class="btn btn-gold btn-sm px-3">View Details</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4">
+          <div class="product-card">
+            <img src="https://images.unsplash.com/photo-1565043666747-69f6646db940?w=600&q=80&fit=crop" alt="Machinery">
+            <div class="product-card-body">
+              <span class="product-badge">Industrial</span>
+              <h5 class="fw-bold mb-1" style="font-family:'Playfair Display',serif">Industrial Machinery</h5>
+              <p class="text-muted small mb-3">Advanced manufacturing and processing equipment built for global
+                standards.</p>
+              <a href="pages/machinery.html" class="btn btn-gold btn-sm px-3">View Details</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="text-center mt-5">
+        <a href="pages/products.html" class="btn btn-outline-gold btn-lg px-5">View All Products</a>
+      </div>
+    </div>
+  </section>
+  <!-- ========================================================= -->
+
+
+  <footer class="footer py-5 text-center text-white" style="background:#111">
+    <div class="container">
+      <img src="images/Gif-Logo-Circle.gif" alt="MiDi Exports"
+        style="height:80px;width:80px;object-fit:contain;border-radius:50%;background:#fff;padding:3px;margin-bottom:0.75rem">
+      <h3 class="mb-2" style="font-family:'Playfair Display',serif">MiDi <span style="color:#d4a017">EXPORTS</span>
+      </h3>
+      <p class="mb-3" style="color:rgba(255,255,255,0.65)">Global Export Solutions from India</p>
+      <div class="mb-3 d-flex justify-content-center flex-wrap gap-3">
+        <a href="index.html" style="color:rgba(255,255,255,0.7)" class="text-decoration-none hover-gold">Home</a>
+        <a href="pages/about.html" style="color:rgba(255,255,255,0.7)" class="text-decoration-none">About Us</a>
+        <a href="pages/products.html" style="color:rgba(255,255,255,0.7)" class="text-decoration-none">Products</a>
+        <a href="pages/contact.html" style="color:rgba(255,255,255,0.7)" class="text-decoration-none">Contact</a>
+      </div>
+      <p class="mb-0" style="color:rgba(255,255,255,0.45);font-size:0.88rem">Email: info@midiexports.com &nbsp;|&nbsp;
+        &copy; 2026 MiDi Exports. All Rights Reserved.</p>
     </div>
   </footer>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.bundle.min.js"></script>
+
+  <script src="scripts/slider.js"></script>
+
 </body>
 
 </html>

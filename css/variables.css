@@ -14,7 +14,12 @@
 	--color-bg-alt: #f6f6f6; /* Section alternates */
 	--color-border: #e0e0e0; /* Borders / dividers */
 	--color-white: #ffffff;
+	--bs-warning-rgb: 255, 193, 7;
+	--bs-border-style: solid;
+	--bs-border-color: #dee2e6;
 	--color-overlay: rgba(0, 0, 0, 0.55);
+	--bs-dark-rgb: 33, 37, 41;
+	--bs-bg-opacity: 0.5;
 
 	/* Typography */
 	--font-heading: "Playfair Display", Georgia, serif;
