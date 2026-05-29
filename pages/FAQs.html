@@ -4,350 +4,41 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- google fonts ( Inter, Playfair Display ) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
     href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap"
     rel="stylesheet">
+
+  <!-- bootstrap cdn -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css">
-  <title>FAQs | MiDi Exports</title>
+
+  <!-- bootstrap icon -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+  <!-- fontawsome icon -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <!-- page title -->
+  <title>Export Markets | MiDi Exports</title>
+
+  <!-- external css -->
+  <link rel="stylesheet" href="/css/style.css">
+
   <style>
-    :root {
-      --gold: #D4A017;
-      --gold-dk: #b8880f;
-      --dark: #111
-    }
-
-    body {
-      font-family: 'Inter', sans-serif
-    }
-
-    h1,
-    h2,
-    h3,
-    h4 {
-      font-family: 'Playfair Display', serif
-    }
-
-    .navbar-brand span {
-      color: var(--gold)
-    }
-
-    .nav-link {
-      font-size: .85rem;
-      font-weight: 500
-    }
-
-    .nav-link:hover,
-    .nav-link.active {
-      color: var(--gold) !important
-    }
-
-    .btn-gold {
-      background: var(--gold);
-      color: #111;
-      font-weight: 700;
-      border: 2px solid var(--gold);
-      border-radius: 4px;
-      transition: .25s
-    }
-
-    .btn-gold:hover {
-      background: var(--gold-dk);
-      border-color: var(--gold-dk);
-      color: #111;
-      transform: translateY(-2px)
-    }
-
-    .btn-outline-gold {
-      border: 2px solid rgba(255, 255, 255, .75);
-      color: #fff;
-      font-weight: 700;
-      border-radius: 4px;
-      transition: .25s
-    }
-
-    .btn-outline-gold:hover {
-      background: #fff;
-      color: #111;
-      border-color: #fff;
-      transform: translateY(-2px)
-    }
-
-    .stag {
-      font-size: .7rem;
-      font-weight: 700;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      color: var(--gold)
-    }
-
-    .page-banner {
-      margin-top: 70px;
-      height: 60vh;
-      min-height: 320px;
-      background-size: cover;
-      background-position: center;
-      position: relative;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center
-    }
-
-    .page-banner .ov {
-      position: absolute;
-      inset: 0;
-      background: rgba(0, 0, 0, .55)
-    }
-
-    .page-banner .bc {
-      position: relative;
-      z-index: 2;
-      color: #fff;
-      padding: 0 1rem
-    }
-
-    .page-banner .bc h1 {
-      font-size: clamp(2.2rem, 6vw, 4rem);
-      font-weight: 700
-    }
-
-    .page-banner .bc p {
-      font-size: 1.1rem;
-      opacity: .88;
-      max-width: 600px;
-      margin: 0 auto
-    }
-
-    .pcard {
-      border: 1px solid #e0e0e0;
-      border-radius: 12px;
-      overflow: hidden;
-      transition: .25s;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, .06);
-      height: 100%
-    }
-
-    .pcard:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 6px 22px rgba(0, 0, 0, .12)
-    }
-
-    .pcard img {
-      width: 100%;
-      height: 200px;
-      object-fit: cover
-    }
-
-    .pcard .cb h3 {
-      font-size: 1.05rem;
-      font-weight: 700;
-      color: #111
-    }
-
-    .pcard .cb p {
-      font-size: .88rem;
-      color: #666;
-      line-height: 1.8
-    }
-
-    .vbox {
-      background: #f6f6f6;
-      padding: 2rem;
-      border-radius: 12px;
-      border-left: 4px solid var(--gold);
-      transition: .25s;
-      height: 100%
-    }
-
-    .vbox:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 4px 18px rgba(0, 0, 0, .1)
-    }
-
-    .vbox h3 {
-      font-size: 1rem;
-      font-weight: 700;
-      color: #111;
-      margin-bottom: .4rem
-    }
-
-    .vbox p {
-      font-size: .88rem;
-      color: #666;
-      line-height: 1.8;
-      margin: 0
-    }
-
-    .faq-item {
-      background: #fff;
-      border: 1px solid #e0e0e0;
-      border-radius: 12px;
-      overflow: hidden
-    }
-
-    .faq-q {
-      padding: 1.2rem 1.5rem;
-      font-family: 'Playfair Display', serif;
-      font-size: 1rem;
-      font-weight: 700;
-      color: #111;
-      cursor: pointer;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      user-select: none
-    }
-
-    .faq-q::after {
-      content: '+';
-      font-size: 1.5rem;
-      color: var(--gold);
-      font-weight: 300;
-      transition: .2s
-    }
-
-    .faq-item.open .faq-q::after {
-      content: '\2212'
-    }
-
-    .faq-a {
-      display: none;
-      padding: 0 1.5rem 1.2rem;
-      font-size: .9rem;
-      color: #666;
-      line-height: 1.8
-    }
-
-    .faq-item.open .faq-a {
-      display: block
-    }
-
-    .scard {
-      background: #fff;
-      border: 1px solid #e0e0e0;
-      border-radius: 12px;
-      padding: 2rem;
-      transition: .25s;
-      height: 100%
-    }
-
-    .scard:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 5px 20px rgba(0, 0, 0, .1)
-    }
-
-    .mbox {
-      background: #fff;
-      border-radius: 12px;
-      padding: 2rem;
-      box-shadow: 0 2px 10px rgba(0, 0, 0, .07);
-      border: 1px solid #e0e0e0;
-      height: 100%;
-      text-align: center
-    }
-
-    .mbox img {
-      width: 100%;
-      height: 200px;
-      object-fit: cover;
-      border-radius: 8px;
-      margin-bottom: 1.2rem
-    }
-
-    .ccard {
-      background: #fff;
-      border: 1px solid #e0e0e0;
-      border-radius: 12px;
-      padding: 2rem;
-      transition: .25s;
-      height: 100%
-    }
-
-    .ccard:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 5px 20px rgba(0, 0, 0, .1)
-    }
-
-    .ccard h3 {
-      font-size: 1.1rem;
-      font-weight: 700;
-      color: var(--gold);
-      margin-bottom: .75rem
-    }
-
-    .ccard p {
-      font-size: .9rem;
-      color: #666;
-      line-height: 1.8;
-      margin: 0
-    }
-
-    .form-control,
-    .form-select {
-      border: 1.5px solid #e0e0e0;
-      border-radius: 8px;
-      font-size: .9rem;
-      padding: .8rem 1rem
-    }
-
-    .form-control:focus,
-    .form-select:focus {
-      border-color: var(--gold);
-      box-shadow: 0 0 0 3px rgba(212, 160, 23, .15)
-    }
-
-    .cta-sec {
-      background: var(--dark);
-      position: relative;
-      overflow: hidden
-    }
-
-    .cta-sec::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: url('https://images.unsplash.com/photo-1553413077-190dd305871c?w=1200&q=85&fit=crop') center/cover;
-      opacity: .15
-    }
-
-    .cta-sec .inn {
-      position: relative;
-      z-index: 2
-    }
-
-    footer {
-      background: var(--dark)
-    }
-
-    footer .ftag {
-      color: var(--gold)
-    }
-
-    footer a {
-      color: rgba(255, 255, 255, .65);
-      text-decoration: none;
-      transition: .25s
-    }
-
-    footer a:hover {
-      color: var(--gold)
-    }
-
-    footer .fcopy {
-      font-size: .75rem;
-      color: rgba(255, 255, 255, .35);
-      border-top: 1px solid rgba(255, 255, 255, .1)
-    }
+    
   </style>
 </head>
 
 <body>
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top shadow-sm" style="height:70px">
     <div class="container-fluid px-4">
-      <a class="navbar-brand d-flex align-items-center gap-2 fw-bold fs-5" style="font-family:'Playfair Display',serif" href="../index.html">
-        <img src="../images/Gif-Logo-Circle.gif" alt="MiDi Exports Logo" style="height:52px;width:52px;object-fit:contain;border-radius:50%;background:#fff;padding:2px;flex-shrink:0;">
+      <a class="navbar-brand d-flex align-items-center gap-2 fw-bold fs-5" style="font-family:'Playfair Display',serif"
+        href="../index.html">
+        <img src="../images/Gif-Logo-Circle.gif" alt="MiDi Exports Logo"
+          style="height:52px;width:52px;object-fit:contain;border-radius:50%;background:#fff;padding:2px;flex-shrink:0;">
         <span class="fw-bold fs-5" style="font-family:'Playfair Display',serif;color:#fff;line-height:1.1">MiDi
           <span style="color:#d4a017;font-size:fs-5;letter-spacing:2px;font-weight:700">EXPORTS</span></span>
       </a>
@@ -369,15 +60,15 @@
   </nav>
   <section class="page-banner"
     style="background-image:url('https://images.unsplash.com/photo-1553413077-190dd305871c?w=1200&q=85&fit=crop')">
-    <div class="ov"></div>
-    <div class="bc">
+    <div class="overlay"></div>
+    <div class="banner-content">
       <h1>Frequently Asked Questions</h1>
       <p>Answers to Common Questions About Our Export Services</p>
     </div>
   </section>
   <section class="py-5 py-lg-6">
     <div class="container py-3">
-      <div class="text-center mb-5"><span class="stag d-block mb-2">Got Questions?</span>
+      <div class="text-center mb-5"><span class="section-tag d-block mb-2">Got Questions?</span>
         <h2 class="mb-3">We Have Answers</h2>
         <p class="text-muted mx-auto" style="max-width:620px">Find answers to common questions about our export
           services, logistics, shipping, product quality and delivery.</p>
@@ -414,7 +105,7 @@
             <div class="faq-item">
               <div class="faq-q">How can I place an order?</div>
               <div class="faq-a">You can contact our team through the Contact Us page, or send your requirements
-                directly via email at info@midiexports.com or call us during business hours.</div>
+                directly via email at info@example.com or call us during business hours.</div>
             </div>
             <div class="faq-item">
               <div class="faq-q">Do you support bulk orders?</div>
@@ -440,26 +131,97 @@
           </div>
           <div class="text-center mt-5">
             <p class="text-muted mb-4">Still have questions? Our export team is ready to help.</p><a href="contact.html"
-              class="btn btn-gold btn-lg px-5">Contact Us</a>
+              class="btn btn-lg px-5">Contact Us</a>
           </div>
         </div>
       </div>
     </div>
   </section>
-  <footer class="footer py-5 text-center text-white">
-    <div class="container">
-      <img src="../images/Gif-Logo-Circle.gif" alt="MiDi Exports Logo" style="height:80px;width:80px;object-fit:contain;border-radius:50%;background:#fff;padding:3px;margin-bottom:0.75rem">
-      <h3 class="mb-2" style="font-family:'Playfair Display',serif">MiDi <span style="color:var(--gold)">EXPORTS</span>
-      </h3>
-      <p class="ftag mb-3">Global Export Solutions from India</p>
-      <div class="d-flex justify-content-center flex-wrap gap-4 mb-3">
-        <a href="../index.html">Home</a><a href="about.html">About Us</a><a href="products.html">Products</a><a
-          href="contact.html">Contact</a>
+
+  <footer class="site-footer">
+
+    <!-- Main footer body -->
+    <div class="footer-body">
+      <div class="container">
+        <div class="row gy-5">
+
+          <!-- Brand column -->
+          <div class="col-lg-4 col-md-12 text-center text-lg-start">
+            <div class="footer-brand">
+              <img src="/images/Gif-Logo-Circle.gif" alt="MiDi Exports Logo" class="footer-logo">
+              <h4 class="footer-name mt-3">MiDi <span>EXPORTS</span></h4>
+              <p class="footer-tagline">Maharashtra Industries Development Institute — Bridging India to the World</p>
+              <div class="footer-socials mt-3">
+                <a href="#" class="social-btn" title="LinkedIn"><i class="bi bi-linkedin"></i></a>
+                <a href="#" class="social-btn" title="Twitter"><i class="bi bi-twitter-x"></i></a>
+                <a href="#" class="social-btn" title="WhatsApp"><i class="bi bi-whatsapp"></i></a>
+                <a href="#" class="social-btn" title="Email"><i class="bi bi-envelope"></i></a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Quick Links -->
+          <div class="col-lg-2 col-sm-6">
+            <h6 class="footer-heading">Quick Links</h6>
+            <ul class="footer-links">
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../pages/about.html">About Us</a></li>
+              <li><a href="../pages/products.html">Products</a></li>
+              <li><a href="../pages/infrastructure.html">Infrastructure</a></li>
+              <li><a href="../pages/machinery.html">Machinery</a></li>
+            </ul>
+          </div>
+
+          <!-- Products -->
+          <div class="col-lg-2 col-sm-6">
+            <h6 class="footer-heading">Our Products</h6>
+            <ul class="footer-links">
+              <li><a href="../pages/products.html">Spices & Herbs</a></li>
+              <li><a href="../pages/products.html">Pulses & Grains</a></li>
+              <li><a href="../pages/products.html">Fresh Produce</a></li>
+              <li><a href="../pages/machinery.html">Industrial Machinery</a></li>
+              <li><a href="../pages/export-market.html">Export Markets</a></li>
+            </ul>
+          </div>
+
+          <!-- Contact -->
+          <div class="col-lg-4 col-md-12">
+            <h6 class="footer-heading">Get In Touch</h6>
+            <ul class="footer-contact">
+              <li>
+                <span class="contact-icon"><i class="bi bi-geo"></i></span>
+                <span>Maharashtra, India</span>
+              </li>
+              <li>
+                <span class="contact-icon"><i class="bi bi-envelope"></i></span>
+                <a href="mailto:info@example.com">info@example.com</a>
+              </li>
+              <li>
+                <span class="contact-icon"><i class="bi bi-telephone"></i></span>
+                <span>+91 00000 00000</span>
+              </li>
+              <li>
+                <span class="contact-icon"><i class="bi bi-calendar-check"></i></span>
+                <span>Mon – Sat: 9:00 AM – 6:00 PM IST</span>
+              </li>
+            </ul>
+          </div>
+
+        </div>
       </div>
-      <p class="fcopy pt-3 mt-2 mb-0">Email: info@midiexports.com &nbsp;|&nbsp; &copy; 2026 MiDi Exports. All Rights
-        Reserved.</p>
     </div>
+
+
+    <!-- Bottom bar -->
+    <div class="footer-bottom">
+      <div class="container d-flex flex-column flex-md-row align-items-center justify-content-between gap-2">
+        <p class="mb-0">&copy; 2026 MiDi Exports. All Rights Reserved.</p>
+        <p class="mb-0"><a href="../pages/FAQs.html">FAQs</a> &nbsp;|&nbsp; <a href="../pages/contact.html">Contact</a></p>
+      </div>
+    </div>
+
   </footer>
+
   <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.bundle.min.js"></script>
   <script>
     document.querySelectorAll('.faq-q').forEach(q => {
@@ -471,6 +233,17 @@
       });
     });
   </script>
+
+  <!-- WhatsApp Floating Button (Font Awesome icon) -->
+  <a href="https://wa.me/919876543210?text=Hello%20MiDi%20Exports%2C%20I%20would%20like%20to%20inquire%20about%20your%20products."
+    class="wa-float" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+    <i class="fa-brands fa-whatsapp wa-icon"></i>
+    <span class="wa-label">Chat with us</span>
+  </a>
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/js/all.min.js"></script>
+
 </body>
 
 </html>
