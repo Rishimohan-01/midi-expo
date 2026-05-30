@@ -26,6 +26,7 @@
 
   <!-- external css -->
   <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="../css/responsive.css">
 
 
 </head>
@@ -40,9 +41,10 @@
         <span class="fw-bold fs-5" style="font-family:'Playfair Display',serif;color:#fff;line-height:1.1">MiDi
           <span style="color:#d4a017;font-size:fs-5;letter-spacing:2px;font-weight:700">EXPORTS</span></span>
       </a>
-      <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#nm"><span
-          class="navbar-toggler-icon"></span></button>
-      <div class="collapse navbar-collapse" id="nm">
+      <button class="navbar-toggler" type="button" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="hb"><span></span><span></span><span></span></span>
+      </button>
+      <div class="collapse navbar-collapse" id="mobileMenu">
         <ul class="navbar-nav ms-auto gap-1">
           <li class="nav-item"><a class="nav-link" href="../index.html">Home</a></li>
           <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
@@ -74,21 +76,22 @@
           <div class="ccard text-center">
             <div class="fs-2 mb-3"><i class="bi bi-geo"></i></div>
             <h3>Our Address</h3>
-            <p>MiDi Exports Pvt. Ltd.<br>Mumbai, Maharashtra, India</p>
+            <p>MiDi Exports Pvt. Ltd.<br>Mumbai, office no. 18, mega silver, Near Holly Cross School, rambaug kalyan
+              west</p>
           </div>
         </div>
         <div class="col-sm-6 col-lg-4">
           <div class="ccard text-center">
             <div class="fs-2 mb-3"><i class="bi bi-envelope"></i></div>
             <h3>Email Us</h3>
-            <p>info@example.com<br>support@example.com</p>
+            <p>operations@midiexports.com<br>support@example.com</p>
           </div>
         </div>
         <div class="col-sm-6 col-lg-4">
           <div class="ccard text-center">
             <div class="fs-2 mb-3"><i class="bi bi-telephone"></i></div>
             <h3>Call Us</h3>
-            <p>+91 00000 00000<br>Mon – Sat, 9am – 6pm IST</p>
+            <p>+91 98338 89935<br>Mon – Sat, 9am – 6pm IST</p>
           </div>
         </div>
       </div>
@@ -102,37 +105,7 @@
             <h2 class="mb-2">Submit Your Inquiry</h2>
             <p class="text-muted">Fill in the form below and our team will get back to you within 24 hours.</p>
           </div>
-          <!-- <form>
-            <div class="row g-3">
-              <div class="col-md-6"><label class="form-label small fw-semibold">Full Name</label><input type="text"
-                  class="form-control" placeholder="Your Full Name" required></div>
-              <div class="col-md-6"><label class="form-label small fw-semibold">Email Address</label><input type="email"
-                  class="form-control" placeholder="your@email.com" required></div>
-              <div class="col-md-6"><label class="form-label small fw-semibold">Phone Number</label><input type="tel"
-                  class="form-control" placeholder="+91 00000 00000"></div>
-              <div class="col-md-6"><label class="form-label small fw-semibold">Country</label><input type="text"
-                  class="form-control" placeholder="Your Country"></div>
-              <div class="col-12"><label class="form-label small fw-semibold">Product Category</label>
-                <select class="form-select">
-                  <option value="" selected disabled>Select a product category</option>
-                  <option>Fresh Fruits</option>
-                  <option>Fresh Vegetables</option>
-                  <option>Indian Spices</option>
-                  <option>Herbs</option>
-                  <option>Dry Fruits</option>
-                  <option>Pulses &amp; Grains</option>
-                  <option>Flours</option>
-                  <option>Dehydrated Products</option>
-                  <option>Other</option>
-                </select>
-              </div>
-              <div class="col-12"><label class="form-label small fw-semibold">Your Message</label><textarea
-                  class="form-control" rows="5" placeholder="Tell us about your requirements..." required></textarea>
-              </div>
-              <div class="col-12"><button type="submit" class="btn btn-gold btn-lg px-5">Send Message</button></div>
-            </div>
-          </form> -->
-
+          
           <form id="contactForm" novalidate>
             <div class="row g-3">
               <div class="col-md-6">
@@ -147,7 +120,7 @@
               </div>
               <div class="col-md-6">
                 <label class="form-label small fw-semibold">Phone Number</label>
-                <input type="tel" name="phone" class="form-control" placeholder="+91 00000 00000">
+                <input type="tel" name="phone" class="form-control" placeholder="+91 98338 89935">
               </div>
               <div class="col-md-6">
                 <label class="form-label small fw-semibold">Country</label>
@@ -182,7 +155,6 @@
                   <span id="btnSpinner" style="display:none" class="spinner-border spinner-border-sm ms-2"
                     role="status"></span>
                 </button>
-                <!-- <span style="font-size:.8rem;color:#888">We respond within 24 hours</span> -->
               </div>
             </div>
           </form>
@@ -213,7 +185,7 @@
               };
 
               try {
-                const res = await fetch('', {    //https://formspree.io/f/mdajbljd
+                const res = await fetch('https://formspree.io/f/yourkeyadd_here', {
                   method: 'POST',
                   headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
                   body: JSON.stringify(data)
@@ -235,25 +207,25 @@
               }
             });
 
-            // function showPopup(type) {
-            //   const overlay = document.getElementById('popupOverlay');
-            //   const successBox = document.getElementById('popupSuccess');
-            //   const errorBox = document.getElementById('popupError');
-            //   successBox.style.display = type === 'success' ? 'block' : 'none';
-            //   errorBox.style.display = type === 'error' ? 'block' : 'none';
-            //   overlay.style.display = 'flex';
-            //   setTimeout(() => overlay.classList.add('popup-show'), 10);
-            // }
+            function showPopup(type) {
+              const overlay = document.getElementById('popupOverlay');
+              const successBox = document.getElementById('popupSuccess');
+              const errorBox = document.getElementById('popupError');
+              successBox.style.display = type === 'success' ? 'block' : 'none';
+              errorBox.style.display = type === 'error' ? 'block' : 'none';
+              overlay.style.display = 'flex';
+              setTimeout(() => overlay.classList.add('popup-show'), 10);
+            }
 
-            // function closePopup() {
-            //   const overlay = document.getElementById('popupOverlay');
-            //   overlay.classList.remove('popup-show');
-            //   setTimeout(() => overlay.style.display = 'none', 300);
-            // }
+            function closePopup() {
+              const overlay = document.getElementById('popupOverlay');
+              overlay.classList.remove('popup-show');
+              setTimeout(() => overlay.style.display = 'none', 300);
+            }
 
-            // document.getElementById('popupOverlay').addEventListener('click', function (e) {
-            //   if (e.target === this) closePopup();
-            // });
+            document.getElementById('popupOverlay').addEventListener('click', function (e) {
+              if (e.target === this) closePopup();
+            });
           </script>
 
         </div>
@@ -277,7 +249,7 @@
               <div class="footer-socials mt-3">
                 <a href="#" class="social-btn" title="LinkedIn"><i class="bi bi-linkedin"></i></a>
                 <a href="#" class="social-btn" title="Twitter"><i class="bi bi-twitter-x"></i></a>
-                <a href="#" class="social-btn" title="WhatsApp"><i class="bi bi-whatsapp"></i></a>
+                <a href="https://wa.me/+919833889935?text=Hello%20MiDi%20Exports%2C%20I%20would%20like%20to%20inquire%20about%20your%20products." class="social-btn" title="WhatsApp"><i class="bi bi-whatsapp"></i></a>
                 <a href="#" class="social-btn" title="Email"><i class="bi bi-envelope"></i></a>
               </div>
             </div>
@@ -313,15 +285,15 @@
             <ul class="footer-contact">
               <li>
                 <span class="contact-icon"><i class="bi bi-geo"></i></span>
-                <span>Maharashtra, India</span>
+                <span>office no. 18, mega silver, Near Holly Cross School, rambaug kalyan west</span>
               </li>
               <li>
                 <span class="contact-icon"><i class="bi bi-envelope"></i></span>
-                <a href="mailto:info@example.com">info@example.com</a>
+                <a href="mailto:operations@midiexports.com">operations@midiexports.com</a>
               </li>
               <li>
                 <span class="contact-icon"><i class="bi bi-telephone"></i></span>
-                <span>+91 00000 00000</span>
+                <span>+91 98338 89935</span>
               </li>
               <li>
                 <span class="contact-icon"><i class="bi bi-calendar-check"></i></span>
@@ -338,13 +310,15 @@
     <div class="footer-bottom">
       <div class="container d-flex flex-column flex-md-row align-items-center justify-content-between gap-2">
         <p class="mb-0">&copy; 2026 MiDi Exports. All Rights Reserved.</p>
-        <p class="mb-0"><a href="../pages/FAQs.html">FAQs</a> &nbsp;|&nbsp; <a href="../pages/contact.html">Contact</a></p>
+        <p class="mb-0"><a href="../pages/FAQs.html">FAQs</a> &nbsp;|&nbsp; <a href="../pages/contact.html">Contact</a>
+        </p>
       </div>
     </div>
 
   </footer>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.bundle.min.js"></script>
+  
 
   <!-- ===== POPUP MODAL ===== -->
   <div id="popupOverlay"
@@ -367,19 +341,21 @@
       </div>
       <h4 class="popup-title">Something Went Wrong</h4>
       <p class="popup-msg">Please try again or email us directly at<br><a
-          href="mailto:info@example.com">info@example.com</a></p>
+          href="mailto:operations@midiexports.com">operations@midiexports.com</a></p>
       <button class="btn btn-gold px-4" onclick="closePopup()">Try Again</button>
     </div>
   </div>
 
   <!-- WhatsApp Floating Button (Font Awesome icon) -->
-  <a href="https://wa.me/919876543210?text=Hello%20MiDi%20Exports%2C%20I%20would%20like%20to%20inquire%20about%20your%20products."
+  <a href="https://wa.me/+919833889935?text=Hello%20MiDi%20Exports%2C%20I%20would%20like%20to%20inquire%20about%20your%20products."
     class="wa-float" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
     <i class="fa-brands fa-whatsapp wa-icon"></i>
     <span class="wa-label">Chat with us</span>
   </a>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/js/all.min.js"></script>
+
+  <script src="../scripts/navbar-toggler.js"></script>
 
 </body>
 

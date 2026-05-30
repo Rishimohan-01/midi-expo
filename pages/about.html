@@ -27,6 +27,7 @@
 
   <!-- external css -->
   <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="../css/responsive.css">
 
 </head>
 
@@ -41,10 +42,10 @@
         <span class="fw-bold fs-5" style="font-family:'Playfair Display',serif;color:#fff;line-height:1.1">MiDi
           <span style="color:#d4a017;font-size:fs-5;letter-spacing:2px;font-weight:700">EXPORTS</span></span>
       </a>
-      <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navMain">
-        <span class="navbar-toggler-icon"></span>
+      <button class="navbar-toggler" type="button" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="hb"><span></span><span></span><span></span></span>
       </button>
-      <div class="collapse navbar-collapse" id="navMain">
+      <div class="collapse navbar-collapse" id="mobileMenu">
         <ul class="navbar-nav ms-auto gap-1">
           <li class="nav-item"><a class="nav-link" href="../index.html">Home</a></li>
           <li class="nav-item"><a class="nav-link active" href="about.html">About Us</a></li>
@@ -181,7 +182,7 @@
               <div class="footer-socials mt-3">
                 <a href="#" class="social-btn" title="LinkedIn"><i class="bi bi-linkedin"></i></a>
                 <a href="#" class="social-btn" title="Twitter"><i class="bi bi-twitter-x"></i></a>
-                <a href="#" class="social-btn" title="WhatsApp"><i class="bi bi-whatsapp"></i></a>
+                <a href="https://wa.me/+919833889935?text=Hello%20MiDi%20Exports%2C%20I%20would%20like%20to%20inquire%20about%20your%20products." class="social-btn" title="WhatsApp"><i class="bi bi-whatsapp"></i></a>
                 <a href="#" class="social-btn" title="Email"><i class="bi bi-envelope"></i></a>
               </div>
             </div>
@@ -217,15 +218,15 @@
             <ul class="footer-contact">
               <li>
                 <span class="contact-icon"><i class="bi bi-geo"></i></span>
-                <span>Maharashtra, India</span>
+                <span>office no. 18, mega silver, Near Holly Cross School, rambaug kalyan west</span>
               </li>
               <li>
                 <span class="contact-icon"><i class="bi bi-envelope"></i></span>
-                <a href="mailto:info@example.com">info@example.com</a>
+                <a href="mailto:operations@midiexports.com">operations@midiexports.com</a>
               </li>
               <li>
                 <span class="contact-icon"><i class="bi bi-telephone"></i></span>
-                <span>+91 00000 00000</span>
+                <span>+91 98338 89935</span>
               </li>
               <li>
                 <span class="contact-icon"><i class="bi bi-calendar-check"></i></span>
@@ -252,7 +253,7 @@
   </footer>
 
   <!-- WhatsApp Floating Button (Font Awesome icon) -->
-  <a href="https://wa.me/919876543210?text=Hello%20MiDi%20Exports%2C%20I%20would%20like%20to%20inquire%20about%20your%20products."
+  <a href="https://wa.me/+919833889935?text=Hello%20MiDi%20Exports%2C%20I%20would%20like%20to%20inquire%20about%20your%20products."
     class="wa-float" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
     <i class="fa-brands fa-whatsapp wa-icon"></i>
     <span class="wa-label">Chat with us</span>
@@ -261,6 +262,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/js/all.min.js"></script>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.bundle.min.js"></script>
+  <script src="../scripts/navbar-toggler.js"></script>
 </body>
 
 </html>

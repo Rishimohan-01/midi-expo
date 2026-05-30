@@ -58,8 +58,8 @@
 
 	/* Layout */
 	--max-width: 1320px;
-	--section-pad-v: clamp(var(--sp-8), 8vw);
-	--section-pad-h: clamp(var(--sp-4), 6vw);
+	--section-pad-v: clamp(var(--sp-8), 8vw, var(--sp-12));
+	--section-pad-h: clamp(var(--sp-4), 6vw, var(--sp-10));
 
 	/* Borders & Shadows */
 	--radius-sm: 4px;
