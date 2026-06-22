@@ -1,7 +1,10 @@
-/* =========================================
-   MIDI EXPORTS — Homepage (index.html)
-   ========================================= */
 @import url("base.css");
+
+section {
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-size: 100% 100%;
+}
 
 /* -------- Hero -------- */
 .hero-slider {
@@ -445,7 +448,6 @@
 	font-weight: 700;
 	letter-spacing: 2px;
 	text-transform: uppercase;
-	color: #d4a017;
 }
 
 /* ===== POPUP ===== */
@@ -579,3 +581,52 @@
 
 
 
+/* hover effect on header and section tag */
+
+/* .section-tag {
+	background: linear-gradient(135deg, #d4a017 0%, #f0c040 100%);
+
+} */
+
+section h2 {
+  position: relative;
+  display: inline-block;
+  padding-bottom: 6px;
+  transition: color          0.3s ease,
+              letter-spacing 0.3s ease,
+              transform      0.35s cubic-bezier(0.34, 1.2, 0.64, 1);
+  cursor: default;
+}
+
+/* Underline that draws across on hover */
+section h2::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #d4a017, #f0c040, #d4a017);
+  border-radius: 2px;
+  transition: width 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* Hover state */
+section h2:hover {
+  color: #d4a017;
+  letter-spacing: 0.5px;
+  transform: translateY(-2px);
+}
+
+section h2:hover::after {
+  width: 100%;
+}
+
+section h2.section-heading-line {
+  padding-bottom: 10px;
+}
+
+section h2.section-heading-line::after {
+  bottom: 0;
+  height: 2.5px;
+}

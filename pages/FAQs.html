@@ -25,23 +25,20 @@
   <title>Export Markets | MiDi Exports</title>
 
   <!-- external css -->
-  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="../css/style.css">
   <link rel="stylesheet" href="../css/responsive.css">
-
-  <style>
-
-  </style>
+  <link rel="stylesheet" href="../css/animations.css">
 </head>
 
 <body>
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top shadow-sm" style="height:70px">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top shadow-sm" >
     <div class="container-fluid px-4">
       <a class="navbar-brand d-flex align-items-center gap-2 fw-bold fs-5" style="font-family:'Playfair Display',serif"
         href="../index.html">
         <img src="../images/Gif-Logo-Circle.gif" alt="MiDi Exports Logo"
           style="height:52px;width:52px;object-fit:contain;border-radius:50%;background:#fff;padding:2px;flex-shrink:0;">
-        <span class="fw-bold fs-5" style="font-family:'Playfair Display',serif;color:#fff;line-height:1.1">MiDi
-          <span style="color:#d4a017;font-size:fs-5;letter-spacing:2px;font-weight:700">EXPORTS</span></span>
+        <span class="fw-bold" style="font-family:'Playfair Display',serif;color:#fff;line-height:1.1;font-size:30px;">MiDi 
+      <span style="color:#d4a017;letter-spacing:2px;font-weight:700;">EXPORTS</span></span>
       </a>
       <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#nm">
         <span class="hb"><span></span><span></span><span></span></span>
@@ -150,7 +147,7 @@
           <!-- Brand column -->
           <div class="col-lg-4 col-md-12 text-center text-lg-start">
             <div class="footer-brand">
-              <img src="/images/Gif-Logo-Circle.gif" alt="MiDi Exports Logo" class="footer-logo">
+              <img src="../images/Gif-Logo-Circle.gif" alt="MiDi Exports Logo" class="footer-logo">
               <h4 class="footer-name mt-3">MiDi <span>EXPORTS</span></h4>
               <p class="footer-tagline">Maharashtra Industries Development Institute — Bridging India to the World</p>
               <div class="footer-socials mt-3">
@@ -227,17 +224,6 @@
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.bundle.min.js"></script>
 
-  <script>
-    document.querySelectorAll('.faq-q').forEach(q => {
-      q.addEventListener('click', () => {
-        const item = q.parentElement;
-        const isOpen = item.classList.contains('open');
-        document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
-        if (!isOpen) item.classList.add('open');
-      });
-    });
-  </script>
-
   <!-- WhatsApp Floating Button (Font Awesome icon) -->
   <a href="https://wa.me/+919833889935?text=Hello%20MiDi%20Exports%2C%20I%20would%20like%20to%20inquire%20about%20your%20products."
     class="wa-float" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
@@ -248,8 +234,9 @@
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/js/all.min.js"></script>
 
-  <script src="/scripts/navbar-toggler.js"></script>
+  <script src="../scripts/navbar-toggler.js"></script>
 
+  <script src="../scripts/animations.js"></script>
 </body>
 
 </html>

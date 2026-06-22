@@ -206,6 +206,10 @@ img {
 	.navbar-nav .nav-link.active::before {
 		transform: translateX(4px);
 	}
+	.navbar-nav .nav-link::after,
+	.navbar-nav .nav-link.active::after {
+		display: none !important;
+	}
 	.navbar-nav .nav-item:last-child .nav-link {
 		border-bottom: none;
 	}

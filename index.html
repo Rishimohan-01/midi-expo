@@ -4,44 +4,49 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
-  <!-- google fonts ( Inter, Playfair Display ) -->
+
+  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap"
-    rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
 
-  <!-- bootstrap cdn -->
+  <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css">
 
-  <!-- bootstrap icon -->
+  <!-- Bootstrap Icons -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 
-   <!-- fontawsome icon -->
+  <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
-  <!-- page title -->
-  <title>Export Markets | MiDi Exports</title>
+  <title>MiDi Exports | Trusted Global Export Partner</title>
 
-  <!-- external css -->
-  <link rel="stylesheet" href="/css/style.css">
+  <!-- Site CSS -->
+  <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/responsive.css">
+
+  <!-- ★ Animation CSS (separate file) -->
+  <link rel="stylesheet" href="css/animations.css">
 </head>
 
 <body>
 
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top shadow-sm" style="height:70px">
+  <!-- ===================== NAVBAR ===================== -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top shadow-sm" style="height:85px">
     <div class="container-fluid px-4">
+
       <a class="navbar-brand d-flex align-items-center gap-2" href="index.html" style="text-decoration:none">
         <img src="images/Gif-Logo-Circle.gif" alt="MiDi Exports Logo"
           style="height:52px;width:52px;object-fit:contain;border-radius:50%;background:#fff;padding:2px;flex-shrink:0;">
-        <span class="fw-bold fs-5" style="font-family:'Playfair Display',serif;color:#fff;line-height:1.1">MiDi
-          <span style="color:#d4a017;font-size:fs-5;letter-spacing:2px;font-weight:700">EXPORTS</span></span>
+        <span class="fw-bold" style="font-family:'Playfair Display',serif;color:#fff;line-height:1.1;font-size:30px;">
+          MiDi <span style="color:#d4a017;letter-spacing:2px;font-weight:700;">EXPORTS</span>
+        </span>
       </a>
+
       <button class="navbar-toggler" type="button" aria-expanded="false" aria-label="Toggle navigation">
         <span class="hb"><span></span><span></span><span></span></span>
       </button>
+
       <div class="collapse navbar-collapse" id="mobileMenu">
         <ul class="navbar-nav ms-auto gap-1">
           <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
@@ -54,10 +59,13 @@
           <li class="nav-item"><a class="nav-link" href="pages/contact.html">Contact Us</a></li>
         </ul>
       </div>
+
     </div>
   </nav>
+  <!-- ======================= End ============================ -->
 
-  <!-- ===================== HERO SLIDER (40vh) ===================== -->
+
+  <!-- ===================== HERO SLIDER ===================== -->
   <section class="hero-slider">
 
     <!-- Slide 1 -->
@@ -68,7 +76,7 @@
         <h1>Trusted Global Export Partner</h1>
         <p>Delivering premium Indian products worldwide with quality, reliability and international standards.</p>
         <div class="hero-buttons">
-          <a href="pages/products.html" class="btn btn-lg px-4">Explore Products</a>
+          <a href="pages/products.html" class="btn btn-lg px-4 btn-ripple">Explore Products</a>
           <a href="pages/contact.html" class="btn btn-outline btn-lg px-4">Contact Us</a>
         </div>
       </div>
@@ -82,7 +90,7 @@
         <h1>Premium Agro Products</h1>
         <p>From spices to grains, pulses to fresh produce — quality assured from farm to global markets.</p>
         <div class="hero-buttons">
-          <a href="pages/products.html" class="btn btn-lg px-4">View Products</a>
+          <a href="pages/products.html" class="btn btn-lg px-4 btn-ripple">View Products</a>
         </div>
       </div>
     </div>
@@ -95,7 +103,7 @@
         <h1>Global Shipping Solutions</h1>
         <p>Reliable supply chain, professional packaging and seamless logistics to 30+ countries.</p>
         <div class="hero-buttons">
-          <a href="pages/export-market.html" class="btn btn-lg px-4">Our Markets</a>
+          <a href="pages/export-market.html" class="btn btn-lg px-4 btn-ripple">Our Markets</a>
         </div>
       </div>
     </div>
@@ -108,7 +116,7 @@
         <h1>Fresh Fruits & Vegetables</h1>
         <p>Handpicked and carefully packed seasonal produce meeting international phytosanitary standards.</p>
         <div class="hero-buttons">
-          <a href="pages/products.html" class="btn btn-lg px-4">Browse Range</a>
+          <a href="pages/products.html" class="btn btn-lg px-4 btn-ripple">Browse Range</a>
         </div>
       </div>
     </div>
@@ -121,7 +129,7 @@
         <h1>Advanced Machinery & Equipment</h1>
         <p>State-of-the-art industrial machinery exported to manufacturing hubs across the globe.</p>
         <div class="hero-buttons">
-          <a href="pages/machinery.html" class="btn btn-lg px-4">See Machinery</a>
+          <a href="pages/machinery.html" class="btn btn-lg px-4 btn-ripple">See Machinery</a>
           <a href="pages/contact.html" class="btn btn-outline btn-lg px-4">Get a Quote</a>
         </div>
       </div>
@@ -130,7 +138,6 @@
     <!-- Controls -->
     <button class="slider-arrow slider-prev" id="sliderPrev" aria-label="Previous">&#8249;</button>
     <button class="slider-arrow slider-next" id="sliderNext" aria-label="Next">&#8250;</button>
-
     <div class="slider-dots" id="sliderDots">
       <button class="dot active" data-index="0" aria-label="Slide 1"></button>
       <button class="dot" data-index="1" aria-label="Slide 2"></button>
@@ -140,181 +147,264 @@
     </div>
 
   </section>
-  <!-- ============================================================== -->
+  <!-- ===================== END ============================ -->
 
 
-  <!-- ABOUT -->
+  <!-- ===================== STATS TICKER ===================== -->
+  <div class="stats-ticker-wrap">
+    <div class="stats-ticker">
+      <!-- duplicated for seamless loop -->
+      <span><i class="bi bi-diamond-fill"></i></span>
+      <span class="stats-ticker-item">30+ Export Countries</span>
+      <span><i class="bi bi-diamond-fill"></i></span>
+      <span class="stats-ticker-item">ISO Certified Quality</span>
+      <span><i class="bi bi-diamond-fill"></i></span>
+      <span class="stats-ticker-item">200+ Product Lines</span>
+      <span><i class="bi bi-diamond-fill"></i></span>
+      <span class="stats-ticker-item">Sea, Air & Road Freight</span>
+      <span><i class="bi bi-diamond-fill"></i></span>
+      <span class="stats-ticker-item">Farm-Fresh Produce</span>
+      <span><i class="bi bi-diamond-fill"></i></span>
+      <span class="stats-ticker-item">10+ Years of Excellence</span>
+      <span><i class="bi bi-diamond-fill"></i></span>
+      <span class="stats-ticker-item">30+ Export Countries</span>
+      <span><i class="bi bi-diamond-fill"></i></span>
+      <span class="stats-ticker-item">ISO Certified Quality</span>
+      <span><i class="bi bi-diamond-fill"></i></span>
+      <span class="stats-ticker-item">200+ Product Lines</span>
+      <span><i class="bi bi-diamond-fill"></i></span>
+      <span class="stats-ticker-item">Sea, Air & Road Freight</span>
+      <span><i class="bi bi-diamond-fill"></i></span>
+      <span class="stats-ticker-item">Farm-Fresh Produce</span>
+      <span><i class="bi bi-diamond-fill"></i></span>
+      <span class="stats-ticker-item">10+ Years of Excellence</span>
+      <span><i class="bi bi-diamond-fill"></i></span>
+    </div>
+  </div>
+  <!-- ======================== End ================================= -->
+
+
+  <!-- ===================== ABOUT ===================== -->
   <section class="py-5 py-lg-6">
     <div class="container py-3">
       <div class="row align-items-center g-5">
-        <div class="col-lg-6">
-          <img src="https://images.unsplash.com/photo-1578575437130-527eed3abbec?w=1200&q=85&fit=crop"
-            alt="MiDi Exports" class="img-fluid rounded-3 shadow-lg w-100" style="aspect-ratio:4/3;object-fit:cover">
+
+        <!-- Image — fade from left -->
+        <div class="col-lg-6 anim-fade-left">
+          <div class="about-img-wrap">
+            <img src="https://images.unsplash.com/photo-1578575437130-527eed3abbec?w=1200&q=85&fit=crop"
+              alt="MiDi Exports" class="img-fluid rounded-3 shadow-lg w-100 img-anim" style="aspect-ratio:4/3;object-fit:cover">
+          </div>
         </div>
-        <div class="col-lg-6">
-          <span class="section-tag d-block mb-2">Who We Are</span>
-          <h2 class="mb-3" style="font-family:'Playfair Display',serif">About MiDi Exports</h2>
+
+        <!-- Text — fade from right -->
+        <div class="col-lg-6 anim-fade-right">
+          <span class="section-tag d-block mb-2 sub-yel-bg">Who We Are</span>
+          <h2 class="mb-3 section-heading-line" style="font-family:'Playfair Display',serif">About MiDi Exports</h2>
           <p class="text-muted fs-5 mb-3">MiDi Exports is a leading Indian export company committed to supplying
             high-quality industrial and commercial products to global markets.</p>
           <p class="text-muted mb-4">We focus on quality assurance, timely delivery, professional packaging and
             long-term international business relationships.</p>
-          <a href="pages/about.html" class="btn btn-gold px-4">Read More</a>
+          <a href="pages/about.html" class="btn btn-gold px-4 btn-ripple hover-lift">Read More</a>
         </div>
+
       </div>
     </div>
   </section>
+  <!-- ======================== End ================================= -->
 
-  <!-- SERVICES -->
+
+  <!-- ===================== SERVICES ===================== -->
   <section class="py-5 py-lg-6 bg-light">
     <div class="container py-3">
-      <div class="text-center mb-5">
+
+      <div class="text-center mb-5 anim-fade-up">
         <span class="section-tag d-block mb-2">What We Offer</span>
-        <h2 style="font-family:'Playfair Display',serif">Our Export Categories</h2>
+        <h2 class="section-heading-line" style="font-family:'Playfair Display',serif">Our Export Categories</h2>
       </div>
+
       <div class="row g-4">
-        <div class="col-md-4">
-          <div class="service-card text-center">
+        <div class="col-md-4 anim-fade-up anim-delay-1">
+          <div class="service-card text-center h-100">
             <div class="mb-3 fs-2"><i class="bi bi-buildings"></i></div>
             <h3 class="fs-5 fw-bold mb-2">Industrial Products</h3>
-            <p class="text-muted small mb-0">Exporting premium industrial and manufacturing products with international
-              quality standards.</p>
+            <p class="text-muted small mb-0">Exporting premium industrial and manufacturing products with international quality standards.</p>
           </div>
         </div>
-        <div class="col-md-4">
-          <div class="service-card text-center">
+        <div class="col-md-4 anim-fade-up anim-delay-2">
+          <div class="service-card text-center h-100">
             <div class="mb-3 fs-2"><i class="bi bi-tree-fill"></i></div>
             <h3 class="fs-5 fw-bold mb-2">Agricultural Products</h3>
-            <p class="text-muted small mb-0">Supplying quality agro and food products to global buyers and distributors
-              worldwide.</p>
+            <p class="text-muted small mb-0">Supplying quality agro and food products to global buyers and distributors worldwide.</p>
           </div>
         </div>
-        <div class="col-md-4">
-          <div class="service-card text-center">
+        <div class="col-md-4 anim-fade-up anim-delay-3">
+          <div class="service-card text-center h-100">
             <div class="mb-3 fs-2"><i class="bi bi-box"></i></div>
             <h3 class="fs-5 fw-bold mb-2">Custom Export Solutions</h3>
-            <p class="text-muted small mb-0">Customized packaging, documentation and shipment solutions for worldwide
-              clients.</p>
+            <p class="text-muted small mb-0">Customized packaging, documentation and shipment solutions for worldwide clients.</p>
           </div>
         </div>
       </div>
+
     </div>
   </section>
+  <!-- ======================== End ================================= -->
 
 
   <!-- ===================== WHY CHOOSE US ===================== -->
   <section class="py-5 py-lg-6">
     <div class="container py-3">
-      <div class="text-center mb-5">
+
+      <div class="text-center mb-5 anim-fade-up">
         <span class="section-tag d-block mb-2">Our Strengths</span>
-        <h2 style="font-family:'Playfair Display',serif">Why Choose MiDi Exports?</h2>
+        <h2 class="section-heading-line" style="font-family:'Playfair Display',serif">Why Choose MiDi Exports?</h2>
         <p class="text-muted mt-2 mx-auto" style="max-width:540px">We combine decades of expertise with modern
           infrastructure to deliver unmatched export services.</p>
       </div>
+
       <div class="row g-4">
-        <div class="col-sm-6 col-lg-3">
+        <div class="col-sm-6 col-lg-3 anim-pop-in anim-delay-1">
           <div class="why-us-card">
-            <div class="why-us-icon"><i class="bi bi-trophy"></i></i></div>
+            <div class="why-us-icon"><i class="bi bi-trophy"></i></div>
             <h5 class="fw-bold mb-2" style="font-family:'Playfair Display',serif">Certified Quality</h5>
-            <p class="text-muted small mb-0">All products are inspected and certified to meet international food safety
-              and quality standards.</p>
+            <p class="text-muted small mb-0">All products are inspected and certified to meet international food safety and quality standards.</p>
           </div>
         </div>
-        <div class="col-sm-6 col-lg-3">
+        <div class="col-sm-6 col-lg-3 anim-pop-in anim-delay-2">
           <div class="why-us-card">
             <div class="why-us-icon"><i class="bi bi-globe-central-south-asia"></i></div>
             <h5 class="fw-bold mb-2" style="font-family:'Playfair Display',serif">Global Reach</h5>
-            <p class="text-muted small mb-0">Established distribution network across Asia, Europe, Middle East, and
-              the Americas.</p>
+            <p class="text-muted small mb-0">Established distribution network across Asia, Europe, Middle East, and the Americas.</p>
           </div>
         </div>
-        <div class="col-sm-6 col-lg-3">
+        <div class="col-sm-6 col-lg-3 anim-pop-in anim-delay-3">
           <div class="why-us-card">
             <div class="why-us-icon"><i class="bi bi-lightning-charge-fill"></i></div>
             <h5 class="fw-bold mb-2" style="font-family:'Playfair Display',serif">Timely Delivery</h5>
-            <p class="text-muted small mb-0">Streamlined logistics ensure on-time shipments with full tracking and
-              end-to-end support.</p>
+            <p class="text-muted small mb-0">Streamlined logistics ensure on-time shipments with full tracking and end-to-end support.</p>
           </div>
         </div>
-        <div class="col-sm-6 col-lg-3">
+        <div class="col-sm-6 col-lg-3 anim-pop-in anim-delay-4">
           <div class="why-us-card">
             <div class="why-us-icon"><i class="bi bi-person-raised-hand"></i></div>
             <h5 class="fw-bold mb-2" style="font-family:'Playfair Display',serif">Dedicated Support</h5>
-            <p class="text-muted small mb-0">A dedicated relationship manager for every client ensuring smooth
-              transactions and communication.</p>
+            <p class="text-muted small mb-0">A dedicated relationship manager for every client ensuring smooth transactions and communication.</p>
           </div>
         </div>
       </div>
+
     </div>
   </section>
-  <!-- ========================================================= -->
+  <!-- ======================== End ================================= -->
+
+
+  <!-- ===================== STATS NUMBERS ===================== -->
+  <!-- <section class="py-5" style="background:#111;color:#fff">
+    <div class="container">
+      <div class="row text-center g-4">
+        <div class="col-6 col-md-3 anim-scale-in anim-delay-1">
+          <h2 class="display-5 fw-bold" style="color:#d4a017;font-family:'Playfair Display',serif">
+            <span data-count="10" data-suffix="+">0</span>
+          </h2>
+          <p class="text-white-50 mb-0 small">Years of Experience</p>
+        </div>
+        <div class="col-6 col-md-3 anim-scale-in anim-delay-2">
+          <h2 class="display-5 fw-bold" style="color:#d4a017;font-family:'Playfair Display',serif">
+            <span data-count="30" data-suffix="+">0</span>
+          </h2>
+          <p class="text-white-50 mb-0 small">Export Destinations</p>
+        </div>
+        <div class="col-6 col-md-3 anim-scale-in anim-delay-3">
+          <h2 class="display-5 fw-bold" style="color:#d4a017;font-family:'Playfair Display',serif">
+            <span data-count="500" data-suffix="+">0</span>
+          </h2>
+          <p class="text-white-50 mb-0 small">Happy Clients</p>
+        </div>
+        <div class="col-6 col-md-3 anim-scale-in anim-delay-4">
+          <h2 class="display-5 fw-bold" style="color:#d4a017;font-family:'Playfair Display',serif">
+            <span data-count="200" data-suffix="+">0</span>
+          </h2>
+          <p class="text-white-50 mb-0 small">Product Lines</p>
+        </div>
+      </div>
+    </div>
+  </section> -->
+  <!-- ======================== End ================================= -->
 
 
   <!-- ===================== FEATURED PRODUCTS ===================== -->
   <section class="py-5 py-lg-6 bg-light">
     <div class="container py-3">
-      <div class="text-center mb-5">
+
+      <div class="text-center mb-5 anim-fade-up">
         <span class="section-tag d-block mb-2">Our Range</span>
-        <h2 style="font-family:'Playfair Display',serif">Featured Product Categories</h2>
-        <p class="text-muted mt-2 mx-auto" style="max-width:520px">Explore our diverse range of export-quality products
-          sourced directly from India's finest producers.</p>
+        <h2 class="section-heading-line" style="font-family:'Playfair Display',serif">Featured Product Categories</h2>
+        <p class="text-muted mt-2 mx-auto" style="max-width:520px">Explore our diverse range of export-quality products sourced directly from India's finest producers.</p>
       </div>
+
       <div class="row g-4">
-        <div class="col-md-6 col-lg-4">
+        <div class="col-md-6 col-lg-4 anim-fade-up anim-delay-1">
           <div class="product-card">
-            <img src="https://images.unsplash.com/photo-1596040033229-a9821ebd058d?w=600&q=80&fit=crop" alt="Spices">
+            <div class="img-wrap">
+              <img src="https://images.unsplash.com/photo-1596040033229-a9821ebd058d?w=600&q=80&fit=crop" alt="Spices" class="img-anim">
+            </div>
             <div class="product-card-body">
               <span class="product-badge">Agricultural</span>
               <h5 class="fw-bold mb-1" style="font-family:'Playfair Display',serif">Spices & Herbs</h5>
-              <p class="text-muted small mb-3">Premium turmeric, cumin, coriander, cardamom and 50+ aromatic
-                spices.</p>
-              <a href="pages/products.html" class="btn btn-gold btn-sm px-3">View Details</a>
+              <p class="text-muted small mb-3">Premium turmeric, cumin, coriander, cardamom and 50+ aromatic spices.</p>
+              <a href="pages/products.html" class="btn btn-gold btn-sm px-3 btn-ripple">View Details</a>
             </div>
           </div>
         </div>
-        <div class="col-md-6 col-lg-4">
+        <div class="col-md-6 col-lg-4 anim-fade-up anim-delay-2">
           <div class="product-card">
-            <img src="https://images.unsplash.com/photo-1515543237350-b3eea1ec8082?w=600&q=80&fit=crop" alt="Pulses">
+            <div class="img-wrap">
+              <img src="images/pulses-and-grains.jpg" alt="Pulses" class="img-anim">
+            </div>
             <div class="product-card-body">
               <span class="product-badge">Agricultural</span>
               <h5 class="fw-bold mb-1" style="font-family:'Playfair Display',serif">Pulses & Grains</h5>
-              <p class="text-muted small mb-3">Lentils, chickpeas, toor dal, moong, rice and wheat in bulk and
-                retail packs.</p>
-              <a href="pages/products.html" class="btn btn-gold btn-sm px-3">View Details</a>
+              <p class="text-muted small mb-3">Lentils, chickpeas, toor dal, moong, rice and wheat in bulk and retail packs.</p>
+              <a href="pages/products.html" class="btn btn-gold btn-sm px-3 btn-ripple">View Details</a>
             </div>
           </div>
         </div>
-        <div class="col-md-6 col-lg-4">
+        <div class="col-md-6 col-lg-4 anim-fade-up anim-delay-3">
           <div class="product-card">
-            <img src="https://images.unsplash.com/photo-1565043666747-69f6646db940?w=600&q=80&fit=crop" alt="Machinery">
+            <div class="img-wrap">
+              <img src="images/industrial-machinery.jpg" alt="Machinery" class="img-anim">
+            </div>
             <div class="product-card-body">
               <span class="product-badge">Industrial</span>
               <h5 class="fw-bold mb-1" style="font-family:'Playfair Display',serif">Industrial Machinery</h5>
-              <p class="text-muted small mb-3">Advanced manufacturing and processing equipment built for global
-                standards.</p>
-              <a href="pages/machinery.html" class="btn btn-gold btn-sm px-3">View Details</a>
+              <p class="text-muted small mb-3">Advanced manufacturing and processing equipment built for global standards.</p>
+              <a href="pages/machinery.html" class="btn btn-gold btn-sm px-3 btn-ripple">View Details</a>
             </div>
           </div>
         </div>
       </div>
-      <div class="text-center mt-5">
-        <a href="pages/products.html" class="btn btn-outline-gold btn-lg px-5">View All Products</a>
+
+      <div class="text-center mt-5 anim-fade-up anim-delay-4">
+        <a href="pages/products.html" class="btn btn-outline-gold btn-lg px-5 hover-lift">View All Products</a>
       </div>
+
     </div>
   </section>
-  <!-- ========================================================= -->
+  <!-- ======================== End ================================= -->
 
 
- <footer class="site-footer">
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="site-footer">
 
-    <!-- Main footer body -->
     <div class="footer-body">
       <div class="container">
         <div class="row gy-5">
 
-          <!-- Brand column -->
-          <div class="col-lg-4 col-md-12 text-center text-lg-start">
+          <!-- Brand -->
+          <div class="col-lg-4 col-md-12 text-center text-lg-start anim-fade-up anim-delay-1">
             <div class="footer-brand">
-              <img src="/images/Gif-Logo-Circle.gif" alt="MiDi Exports Logo" class="footer-logo">
+              <img src="images/Gif-Logo-Circle.gif" alt="MiDi Exports Logo" class="footer-logo">
               <h4 class="footer-name mt-3">MiDi <span>EXPORTS</span></h4>
               <p class="footer-tagline">Maharashtra Industries Development Institute — Bridging India to the World</p>
               <div class="footer-socials mt-3">
@@ -327,7 +417,7 @@
           </div>
 
           <!-- Quick Links -->
-          <div class="col-lg-2 col-sm-6">
+          <div class="col-lg-2 col-sm-6 anim-fade-up anim-delay-2">
             <h6 class="footer-heading">Quick Links</h6>
             <ul class="footer-links">
               <li><a href="./index.html">Home</a></li>
@@ -339,7 +429,7 @@
           </div>
 
           <!-- Products -->
-          <div class="col-lg-2 col-sm-6">
+          <div class="col-lg-2 col-sm-6 anim-fade-up anim-delay-3">
             <h6 class="footer-heading">Our Products</h6>
             <ul class="footer-links">
               <li><a href="./pages/products.html">Spices & Herbs</a></li>
@@ -351,12 +441,12 @@
           </div>
 
           <!-- Contact -->
-          <div class="col-lg-4 col-md-12">
+          <div class="col-lg-4 col-md-12 anim-fade-up anim-delay-4">
             <h6 class="footer-heading">Get In Touch</h6>
             <ul class="footer-contact">
               <li>
                 <span class="contact-icon"><i class="bi bi-geo"></i></span>
-                <span>office no. 18, mega silver, Near Holly Cross School, rambaug kalyan west</span>
+                <span>Office No. 18, Mega Silver, Near Holy Cross School, Rambaug, Kalyan West</span>
               </li>
               <li>
                 <span class="contact-icon"><i class="bi bi-envelope"></i></span>
@@ -381,28 +471,137 @@
     <div class="footer-bottom">
       <div class="container d-flex flex-column flex-md-row align-items-center justify-content-between gap-2">
         <p class="mb-0">&copy; 2026 MiDi Exports. All Rights Reserved.</p>
-        <p class="mb-0"><a href="pages/FAQs.html">FAQs</a> &nbsp;|&nbsp; <a
-            href="pages/contact.html">Contact</a></p>
+        <p class="mb-0"><a href="pages/FAQs.html">FAQs</a> &nbsp;|&nbsp; <a href="pages/contact.html">Contact</a></p>
       </div>
     </div>
 
   </footer>
+  <!-- ======================== End ================================= -->
 
-  <!-- WhatsApp Floating Button (Font Awesome icon) -->
+
+  <!-- WhatsApp Float -->
   <a href="https://wa.me/+919833889935?text=Hello%20MiDi%20Exports%2C%20I%20would%20like%20to%20inquire%20about%20your%20products."
     class="wa-float" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
     <i class="fa-brands fa-whatsapp wa-icon"></i>
     <span class="wa-label">Chat with us</span>
   </a>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/js/all.min.js"></script>
 
+  <!-- ─── Scripts ─── -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.bundle.min.js"></script>
-
   <script src="scripts/slider.js"></script>
-
   <script src="scripts/navbar-toggler.js"></script>
 
-</body>
+  <!-- Animation Script -->
+  <script>
+  (function () {
+    'use strict';
 
+    /* ── 1. SCROLL REVEAL (IntersectionObserver) ─────────────── */
+    const revealEls = document.querySelectorAll(
+      '.anim-fade-up, .anim-fade-left, .anim-fade-right, .anim-scale-in, .anim-pop-in'
+    );
+
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('anim-visible');
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+
+    revealEls.forEach(el => revealObserver.observe(el));
+
+
+    /* ── 2. COUNTER ANIMATION ────────────────────────────────── */
+    const counters = document.querySelectorAll('[data-count]');
+
+    const countObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        const el      = entry.target;
+        const target  = parseInt(el.dataset.count, 10);
+        const suffix  = el.dataset.suffix || '';
+        const dur     = 1800;
+        const step    = target / (dur / 16);
+        let   current = 0;
+
+        const tick = setInterval(() => {
+          current += step;
+          if (current >= target) {
+            current = target;
+            clearInterval(tick);
+          }
+          el.textContent = Math.floor(current) + suffix;
+          el.classList.add('count-running');
+        }, 16);
+
+        countObserver.unobserve(el);
+      });
+    }, { threshold: 0.5 });
+
+    counters.forEach(el => countObserver.observe(el));
+
+
+    /* ── 3. NAVBAR SHRINK ON SCROLL ─────────────────────────── */
+    const navbar = document.querySelector('.navbar');
+    window.addEventListener('scroll', () => {
+      navbar.classList.toggle('navbar-scrolled', window.scrollY > 60);
+    }, { passive: true });
+
+
+    /* ── 4. RIPPLE ON BUTTONS ────────────────────────────────── */
+    document.querySelectorAll('.btn-ripple').forEach(btn => {
+      btn.addEventListener('click', function (e) {
+        const circle = document.createElement('span');
+        circle.classList.add('ripple-circle');
+        const rect = this.getBoundingClientRect();
+        circle.style.left = (e.clientX - rect.left) + 'px';
+        circle.style.top  = (e.clientY - rect.top)  + 'px';
+        this.appendChild(circle);
+        setTimeout(() => circle.remove(), 620);
+      });
+    });
+
+
+    /* ── 5. IMAGE LAZY FADE-IN ───────────────────────────────── */
+    document.querySelectorAll('img.img-anim').forEach(img => {
+      if (img.complete) {
+        img.classList.add('img-loaded');
+      } else {
+        img.addEventListener('load', () => img.classList.add('img-loaded'));
+      }
+    });
+
+
+    /* ── 6. SECTION TAG UNDERLINE TRIGGER ────────────────────── */
+    document.querySelectorAll('.section-tag').forEach(tag => {
+      const obs = new IntersectionObserver(entries => {
+        if (entries[0].isIntersecting) {
+          tag.classList.add('anim-visible');
+          obs.disconnect();
+        }
+      }, { threshold: 0.5 });
+      obs.observe(tag);
+    });
+
+
+    /* ── 7. SECTION HEADING LINE TRIGGER ─────────────────────── */
+    document.querySelectorAll('.section-heading-line').forEach(el => {
+      const obs = new IntersectionObserver(entries => {
+        if (entries[0].isIntersecting) {
+          el.closest('.anim-fade-up, section, div')?.classList.add('anim-visible');
+          el.parentElement.classList.add('anim-visible');
+          obs.disconnect();
+        }
+      }, { threshold: 0.4 });
+      obs.observe(el);
+    });
+
+  })();
+  </script>
+
+  <script src="scripts/animations.js"></script>
+</body>
 </html>

@@ -1,0 +1,911 @@
+/* KEYFRAMES */
+
+/* Panel slides up over fixed background */
+@keyframes panelSlideUp {
+	from {
+		opacity: 0;
+		transform: translateY(60px);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+/* Text line reveal — used for headings & paragraphs */
+@keyframes lineReveal {
+	from {
+		opacity: 0;
+		transform: translateY(28px);
+		clip-path: inset(0 0 100% 0);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0);
+		clip-path: inset(0 0 0% 0);
+	}
+}
+
+@keyframes textFadeUp {
+	from {
+		opacity: 0;
+		transform: translateY(20px);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+@keyframes labelDrop {
+	from {
+		opacity: 0;
+		transform: translateY(-14px);
+		letter-spacing: 4px;
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0);
+		letter-spacing: 2px;
+	}
+}
+
+/* Image / card scale-grow */
+@keyframes scaleGrow {
+	from {
+		opacity: 0;
+		transform: scale(0.72) translateY(30px);
+	}
+	to {
+		opacity: 1;
+		transform: scale(1) translateY(0);
+	}
+}
+
+/* Card slide-up pop */
+@keyframes cardSlidePop {
+	from {
+		opacity: 0;
+		transform: translateY(50px) scale(0.97);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0) scale(1);
+	}
+}
+
+/* Horizontal line draw */
+@keyframes lineDraw {
+	from {
+		width: 0;
+	}
+	to {
+		width: 48px;
+	}
+}
+
+/* Navbar slide down on load */
+@keyframes navSlideDown {
+	from {
+		transform: translateY(-100%);
+		opacity: 0;
+	}
+	to {
+		transform: translateY(0);
+		opacity: 1;
+	}
+}
+
+/* Banner title */
+@keyframes bannerLift {
+	from {
+		opacity: 0;
+		transform: translateY(40px) skewY(2deg);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0) skewY(0deg);
+	}
+}
+
+/* Banner subtitle */
+@keyframes bannerSub {
+	from {
+		opacity: 0;
+		transform: translateY(20px);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+/* Dot/badge ping */
+@keyframes ping {
+	0% {
+		transform: scale(1);
+		opacity: 1;
+	}
+	75%,
+	100% {
+		transform: scale(1.8);
+		opacity: 0;
+	}
+}
+
+/* Float for logo */
+@keyframes floatLogo {
+	0%,
+	100% {
+		transform: translateY(0px);
+	}
+	50% {
+		transform: translateY(-6px);
+	}
+}
+
+/* Counter tick */
+/* @keyframes countUp {
+	from {
+		opacity: 0;
+		transform: translateY(16px);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+} */
+
+/* Page transition */
+@keyframes pageWipeIn {
+	from {
+		clip-path: inset(0 100% 0 0);
+	}
+	to {
+		clip-path: inset(0 0% 0 0);
+	}
+}
+
+/* Shimmer across button */
+@keyframes btnShimmer {
+	0% {
+		background-position: -200px center;
+	}
+	100% {
+		background-position: 200px center;
+	}
+}
+
+/* WhatsApp bounce */
+@keyframes waBounce {
+	0%,
+	100% {
+		transform: translateY(0);
+	}
+	30% {
+		transform: translateY(-10px);
+	}
+	60% {
+		transform: translateY(-4px);
+	}
+}
+
+/* ─────────────────────────────────────────
+   PARALLAX BACKGROUND WRAPPER
+   The video shows the aerial farm image
+   FIXED behind all scrolling content panels
+───────────────────────────────────────── */
+
+/* Applied to <body> via JS when page loads */
+/* body.has-parallax-bg {
+	background-attachment: fixed;
+	background-size: cover;
+	background-position: center top;
+	background-repeat: no-repeat;
+} */
+
+/* Each section becomes a panel floating over the background */
+/* body.has-parallax-bg section:not(.page-banner):not(.hero-slider) {
+	position: relative;
+	z-index: 2;
+	margin-left: auto;
+	margin-right: auto;
+} */
+
+/* White/off-white panel card — Brightmark's floating card look */
+/* .parallax-panel {
+	background: #fff;
+	border-radius: 4px;
+	box-shadow: 0 4px 40px rgba(0, 0, 0, 0.13);
+	padding: 3rem 2.5rem;
+	position: relative;
+	z-index: 2;
+} */
+
+/* bg-light sections get an off-white card tint */
+/* body.has-parallax-bg section.bg-light {
+	background: rgba(248, 248, 244, 0.97) !important;
+} */
+
+/* body.has-parallax-bg
+	section:not(.page-banner):not(.hero-slider):not(.cta-sec):not(.site-footer) {
+	background: rgba(255, 255, 255, 0.97);
+} */
+
+/* body.has-parallax-bg .cta-sec {
+	background: rgba(17, 17, 17, 0.95) !important;
+} */
+
+/* body.has-parallax-bg .site-footer {
+	position: relative;
+	z-index: 2;
+} */
+
+/* ─────────────────────────────────────────
+   NAVBAR ANIMATIONS
+───────────────────────────────────────── */
+
+.navbar {
+	transition:
+		height 0.3s ease,
+		box-shadow 0.3s ease,
+		background 0.3s ease;
+}
+
+/* Shrinks + gains shadow on scroll — JS adds .scrolled */
+.navbar.scrolled {
+	height: 75px !important;
+	box-shadow: 0 3px 20px rgba(0, 0, 0, 0.35) !important;
+}
+
+/* Logo float */
+/* .navbar-brand img {
+	animation: floatLogo 3.5s ease-in-out infinite;
+} */
+
+/* Nav links stagger */
+/* .navbar-nav .nav-item {
+	opacity: 0;
+	animation: textFadeUp 0.45s ease both;
+}
+.navbar-nav .nav-item:nth-child(1) {
+	animation-delay: 0.2s;
+}
+.navbar-nav .nav-item:nth-child(2) {
+	animation-delay: 0.27s;
+}
+.navbar-nav .nav-item:nth-child(3) {
+	animation-delay: 0.34s;
+}
+.navbar-nav .nav-item:nth-child(4) {
+	animation-delay: 0.41s;
+}
+.navbar-nav .nav-item:nth-child(5) {
+	animation-delay: 0.48s;
+}
+.navbar-nav .nav-item:nth-child(6) {
+	animation-delay: 0.55s;
+}
+.navbar-nav .nav-item:nth-child(7) {
+	animation-delay: 0.62s;
+}
+.navbar-nav .nav-item:nth-child(8) {
+	animation-delay: 0.69s;
+} */
+
+/* Hover underline slide from center */
+.navbar-nav .nav-link {
+	position: relative;
+	transition: color 0.25s;
+}
+.navbar-nav .nav-link::after {
+	content: "";
+	position: absolute;
+	bottom: 4px;
+	left: 50%;
+	transform: translateX(-50%);
+	width: 0;
+	height: 2px;
+	background: #d4a017;
+	border-radius: 2px;
+	transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.navbar-nav .nav-link:hover::after,
+.navbar-nav .nav-link.active::after {
+	width: 65%;
+}
+
+/* ─────────────────────────────────────────
+   PAGE BANNER (inner pages)
+   — Banner text lifts in on load 
+───────────────────────────────────────── */
+.page-banner .banner-content h1 {
+	animation: bannerLift 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0.1s both;
+}
+.page-banner .banner-content p {
+	animation: bannerSub 0.7s ease 0.35s both;
+}
+
+/* Subtle Ken Burns on banner */
+.page-banner {
+	overflow: hidden;
+}
+.page-banner::before {
+	content: "";
+	position: absolute;
+	inset: 0;
+	background: inherit;
+	background-size: cover;
+	background-position: center;
+	animation: kbBanner 10s ease-in-out infinite alternate;
+	z-index: 0;
+}
+@keyframes kbBanner {
+	from {
+		transform: scale(1);
+	}
+	to {
+		transform: scale(1.06);
+	}
+}
+.page-banner .overlay {
+	z-index: 1;
+}
+.page-banner .banner-content {
+	z-index: 2;
+}
+
+/* HERO SLIDER TEXT */
+
+.slide.active .hero-tag {
+	animation: labelDrop 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) 0.05s both;
+}
+.slide.active .slide-content h1 {
+	animation: bannerLift 0.7s cubic-bezier(0.22, 1, 0.36, 1) 0.2s both;
+}
+.slide.active .slide-content p {
+	animation: textFadeUp 0.6s ease 0.4s both;
+}
+.slide.active .hero-buttons {
+	animation: textFadeUp 0.55s ease 0.58s both;
+}
+
+/* Slider arrow hover */
+.slider-arrow {
+	transition:
+		background 0.25s,
+		transform 0.25s;
+}
+.slider-arrow:hover {
+	transform: translateY(-50%) scale(1.12);
+}
+
+/* Dot bounce on activate */
+.dot {
+	transition:
+		background 0.25s,
+		transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+.dot.active {
+	transform: scale(1.45);
+}
+
+/* SCROLL-REVEAL BASE CLASSES
+   JS adds .sr-visible when in viewport */
+
+/* Hidden state */
+.sr-panel,
+.sr-text,
+.sr-label,
+.sr-heading,
+.sr-body,
+.sr-card,
+.sr-image,
+.sr-btn {
+	opacity: 0;
+	will-change: opacity, transform;
+}
+
+/* Pre-positions */
+.sr-panel {
+	transform: translateY(60px);
+}
+.sr-text {
+	transform: translateY(28px);
+}
+.sr-label {
+	transform: translateY(-14px);
+}
+.sr-heading {
+	transform: translateY(36px) skewY(1.5deg);
+}
+.sr-body {
+	transform: translateY(20px);
+}
+.sr-card {
+	transform: translateY(50px) scale(0.97);
+}
+.sr-image {
+	transform: scale(0.72) translateY(30px);
+}
+.sr-btn {
+	transform: translateY(16px);
+}
+
+/* Revealed — each class triggers its matching keyframe */
+.sr-panel.sr-visible {
+	animation: panelSlideUp 0.75s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+.sr-text.sr-visible {
+	animation: lineReveal 0.65s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+.sr-label.sr-visible {
+	animation: labelDrop 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+}
+.sr-heading.sr-visible {
+	animation: bannerLift 0.7s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+.sr-body.sr-visible {
+	animation: textFadeUp 0.65s ease both;
+}
+.sr-card.sr-visible {
+	animation: cardSlidePop 0.65s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+.sr-image.sr-visible {
+	animation: scaleGrow 0.8s cubic-bezier(0.34, 1.2, 0.64, 1) both;
+}
+.sr-btn.sr-visible {
+	animation: textFadeUp 0.5s ease both;
+}
+
+/* Stagger delays */
+.sr-d1 {
+	animation-delay: 0.05s !important;
+}
+.sr-d2 {
+	animation-delay: 0.12s !important;
+}
+.sr-d3 {
+	animation-delay: 0.19s !important;
+}
+.sr-d4 {
+	animation-delay: 0.26s !important;
+}
+.sr-d5 {
+	animation-delay: 0.33s !important;
+}
+.sr-d6 {
+	animation-delay: 0.4s !important;
+}
+.sr-d7 {
+	animation-delay: 0.47s !important;
+}
+.sr-d8 {
+	animation-delay: 0.54s !important;
+}
+
+/* ─────────────────────────────────────────
+   SECTION LABEL (section-tag / stag)
+───────────────────────────────────────── */
+
+.section-tag,
+.stag {
+	position: relative;
+	display: inline-block;
+	overflow: hidden;
+}
+/* Animated gold underline on reveal */
+.section-tag::after,
+.stag::after {
+	content: "";
+	position: absolute;
+	bottom: -3px;
+	left: 0;
+	height: 2px;
+	width: 0;
+	background: #d4a017;
+	border-radius: 2px;
+	transition: width 0.55s ease 0.3s;
+}
+.sr-visible .section-tag::after,
+.sr-visible .stag::after,
+.section-tag.sr-visible::after,
+.stag.sr-visible::after {
+	width: 100%;
+}
+
+/* ─────────────────────────────────────────
+   SECTION HEADING — gold divider line
+───────────────────────────────────────── */
+
+h2.anim-heading {
+	position: relative;
+	padding-bottom: 14px;
+	display: inline-block;
+}
+h2.anim-heading::after {
+	content: "";
+	position: absolute;
+	bottom: 0;
+	left: 50%;
+	transform: translateX(-50%);
+	height: 3px;
+	width: 0;
+	background: linear-gradient(90deg, #d4a017, #f0c040, #d4a017);
+	border-radius: 2px;
+	transition: width 0.65s cubic-bezier(0.22, 1, 0.36, 1) 0.2s;
+}
+.sr-visible h2.anim-heading::after,
+h2.anim-heading.sr-visible::after {
+	width: 52px;
+}
+
+/* ─────────────────────────────────────────
+   CARD HOVER  (pcard, service-card,
+   why-us-card, product-card, vbox, ccard)
+───────────────────────────────────────── */
+
+.pcard,
+.service-card,
+.why-us-card,
+.product-card,
+.vbox,
+.ccard,
+.mbox {
+	transition:
+		transform 0.38s cubic-bezier(0.34, 1.2, 0.64, 1),
+		box-shadow 0.38s ease;
+	position: relative;
+	overflow: hidden;
+}
+
+/* Gold top-border sweep on hover — Brightmark panel feel */
+.pcard::after,
+.service-card::after,
+.why-us-card::after,
+.product-card::after,
+.vbox::after,
+.ccard::after {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 0;
+	height: 3px;
+	background: linear-gradient(90deg, #d4a017, #f0c040);
+	transition: width 0.4s ease;
+}
+
+.pcard:hover::after,
+.service-card:hover::after,
+.why-us-card:hover::after,
+.product-card:hover::after,
+.vbox:hover::after,
+.ccard:hover::after {
+	width: 100%;
+}
+
+.pcard:hover,
+.service-card:hover,
+.product-card:hover,
+.mbox:hover {
+	transform: translateY(-8px);
+	box-shadow: 0 16px 40px rgba(0, 0, 0, 0.13);
+}
+
+.why-us-card:hover {
+	transform: translateY(-10px);
+	box-shadow: 0 18px 44px rgba(0, 0, 0, 0.14);
+}
+
+.vbox:hover,
+.ccard:hover {
+	transform: translateY(-6px);
+	box-shadow: 0 12px 32px rgba(0, 0, 0, 0.11);
+}
+
+/* Card image zoom */
+.pcard img,
+.product-card img,
+.mbox img {
+	transition: transform 0.55s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+.pcard:hover img,
+.product-card:hover img,
+.mbox:hover img {
+	transform: scale(1.07);
+}
+
+/* Shiny light sweep on service / why-us cards */
+.service-card::before,
+.why-us-card::before {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: -80%;
+	width: 50%;
+	height: 100%;
+	background: linear-gradient(
+		120deg,
+		transparent,
+		rgba(255, 255, 255, 0.3),
+		transparent
+	);
+	transform: skewX(-18deg);
+	transition: left 0.55s ease;
+}
+.service-card:hover::before,
+.why-us-card:hover::before {
+	left: 130%;
+}
+
+/* Why-us icon bounce */
+.why-us-card:hover .why-us-icon {
+	animation: scaleGrow 0.45s cubic-bezier(0.34, 1.56, 0.64, 1);
+	box-shadow: 0 6px 20px rgba(212, 160, 23, 0.4);
+}
+
+/* ─────────────────────────────────────────
+   IMAGE HOVER (about, mission boxes)
+───────────────────────────────────────── */
+
+.img-hover-wrap img {
+	transition: transform 0.55s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+	display: block;
+	width: 100%;
+}
+.img-hover-wrap:hover img {
+	transform: scale(1.05);
+}
+
+/* ─────────────────────────────────────────
+   BUTTONS
+───────────────────────────────────────── */
+
+.btn-gold {
+	position: relative;
+	overflow: hidden;
+	transition:
+		transform 0.25s cubic-bezier(0.34, 1.2, 0.64, 1),
+		box-shadow 0.25s ease;
+}
+.btn-gold:hover {
+	transform: translateY(-3px);
+	box-shadow: 0 8px 22px rgba(212, 160, 23, 0.42);
+}
+.btn-gold:active {
+	transform: translateY(0) scale(0.97);
+}
+
+/* Shimmer sweep on hover */
+.btn-gold::after {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: -100%;
+	width: 60%;
+	height: 100%;
+	background: linear-gradient(
+		90deg,
+		transparent,
+		rgba(255, 255, 255, 0.3),
+		transparent
+	);
+	transform: skewX(-18deg);
+	transition: left 0.45s ease;
+}
+.btn-gold:hover::after {
+	left: 140%;
+}
+
+.btn-outline-gold {
+	transition:
+		transform 0.25s cubic-bezier(0.34, 1.2, 0.64, 1),
+		box-shadow 0.25s ease;
+}
+.btn-outline-gold:hover {
+	transform: translateY(-3px);
+	box-shadow: 0 6px 18px rgba(255, 255, 255, 0.18);
+}
+
+/* CTA button pulse */
+.cta-sec .btn-gold {
+	animation: ctaPulse 2.5s ease-in-out infinite;
+}
+@keyframes ctaPulse {
+	0%,
+	100% {
+		box-shadow: 0 0 0 0 rgba(212, 160, 23, 0.5);
+	}
+	50% {
+		box-shadow: 0 0 18px 6px rgba(212, 160, 23, 0.35);
+	}
+}
+
+/* ─────────────────────────────────────────
+   FAQ ITEMS  (FAQs.html)
+───────────────────────────────────────── */
+
+.faq-item {
+	transition:
+		box-shadow 0.3s ease,
+		transform 0.3s ease;
+}
+.faq-item:hover {
+	transform: translateX(4px);
+	box-shadow: 0 4px 18px rgba(0, 0, 0, 0.09);
+}
+.faq-item.open {
+	border-left: 3px solid #d4a017;
+}
+
+/* + → − with rotation */
+.faq-q::after {
+	transition:
+		transform 0.3s ease,
+		content 0.3s;
+}
+.faq-item.open .faq-q::after {
+	transform: rotate(0deg);
+}
+
+/* Answer slides open */
+.faq-a {
+	max-height: 0;
+	overflow: hidden;
+	padding: 0 1.5rem;
+	transition:
+		max-height 0.42s cubic-bezier(0.22, 1, 0.36, 1),
+		padding 0.3s ease;
+	display: block !important; /* override display:none — use max-height instead */
+}
+.faq-item.open .faq-a {
+	max-height: 400px;
+	padding: 0 1.5rem 1.2rem;
+}
+
+/* ─────────────────────────────────────────
+   CONTACT FORM
+───────────────────────────────────────── */
+
+.form-control,
+.form-select {
+	transition:
+		border-color 0.25s ease,
+		box-shadow 0.25s ease,
+		transform 0.2s ease;
+}
+.form-control:focus,
+.form-select:focus {
+	transform: translateY(-1px);
+	border-color: #d4a017 !important;
+	box-shadow: 0 0 0 3px rgba(212, 160, 23, 0.18) !important;
+}
+
+/* ─────────────────────────────────────────
+   FOOTER
+───────────────────────────────────────── */
+
+.footer-logo {
+	animation: floatLogo 4s ease-in-out infinite;
+	transition: filter 0.3s;
+}
+.footer-logo:hover {
+	filter: drop-shadow(0 0 10px rgba(212, 160, 23, 0.55));
+}
+
+.footer-links li a {
+	position: relative;
+	transition:
+		color 0.25s,
+		padding-left 0.25s;
+	display: inline-block;
+}
+.footer-links li a::before {
+	content: "›";
+	position: absolute;
+	left: -14px;
+	opacity: 0;
+	color: #d4a017;
+	transition:
+		opacity 0.25s,
+		left 0.25s;
+}
+.footer-links li a:hover {
+	color: #d4a017;
+	padding-left: 16px;
+}
+.footer-links li a:hover::before {
+	opacity: 1;
+	left: 0;
+}
+
+.social-btn {
+	transition:
+		transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1),
+		background 0.3s;
+}
+.social-btn:hover {
+	transform: translateY(-5px) scale(1.14);
+}
+
+/* ─────────────────────────────────────────
+   WHATSAPP BUTTON
+───────────────────────────────────────── */
+
+.wa-float {
+	animation: waBounce 3.8s ease-in-out infinite !important;
+}
+.wa-float:hover {
+	animation: none !important;
+	transform: translateY(-5px) scale(1.05) !important;
+}
+
+/* ─────────────────────────────────────────
+   COUNTER NUMBERS (stats section)
+───────────────────────────────────────── */
+
+[data-count] {
+	display: inline-block;
+}
+[data-count].counting {
+	animation: countUp 0.4s ease both;
+}
+
+/* ─────────────────────────────────────────
+   STATS TICKER (index.html)
+───────────────────────────────────────── */
+
+.stats-ticker-wrap {
+	overflow: hidden;
+	white-space: nowrap;
+	background: #111;
+	padding: 9px 0;
+	border-top: 2px solid #d4a017;
+	border-bottom: 2px solid #d4a017;
+	position: relative;
+	z-index: 2;
+}
+.stats-ticker {
+	display: inline-flex;
+	gap: 3.5rem;
+	animation: ticker 24s linear infinite;
+}
+@keyframes ticker {
+	from {
+		transform: translateX(0);
+	}
+	to {
+		transform: translateX(-50%);
+	}
+}
+.stats-ticker-item {
+	font-size: 0.8rem;
+	font-weight: 600;
+	letter-spacing: 1.5px;
+	text-transform: uppercase;
+	color: rgba(255, 255, 255, 0.82);
+}
+.stats-ticker-item span {
+	color: #d4a017;
+	margin-right: 5px;
+}
+
+.bi-diamond-fill::before {
+  font-size: 0.7rem;
+  color: #d4a017;
+}
+
+/* ─────────────────────────────────────────
+   REDUCED-MOTION SAFETY
+───────────────────────────────────────── */
+
+@media (prefers-reduced-motion: reduce) {
+	*,
+	*::before,
+	*::after {
+		animation-duration: 0.01ms !important;
+		animation-iteration-count: 1 !important;
+		transition-duration: 0.01ms !important;
+	}
+}
