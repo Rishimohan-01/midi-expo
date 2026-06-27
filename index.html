@@ -297,41 +297,7 @@
     </div>
   </section>
   <!-- ======================== End ================================= -->
-
-
-  <!-- ===================== STATS NUMBERS ===================== -->
-  <!-- <section class="py-5" style="background:#111;color:#fff">
-    <div class="container">
-      <div class="row text-center g-4">
-        <div class="col-6 col-md-3 anim-scale-in anim-delay-1">
-          <h2 class="display-5 fw-bold" style="color:#d4a017;font-family:'Playfair Display',serif">
-            <span data-count="10" data-suffix="+">0</span>
-          </h2>
-          <p class="text-white-50 mb-0 small">Years of Experience</p>
-        </div>
-        <div class="col-6 col-md-3 anim-scale-in anim-delay-2">
-          <h2 class="display-5 fw-bold" style="color:#d4a017;font-family:'Playfair Display',serif">
-            <span data-count="30" data-suffix="+">0</span>
-          </h2>
-          <p class="text-white-50 mb-0 small">Export Destinations</p>
-        </div>
-        <div class="col-6 col-md-3 anim-scale-in anim-delay-3">
-          <h2 class="display-5 fw-bold" style="color:#d4a017;font-family:'Playfair Display',serif">
-            <span data-count="500" data-suffix="+">0</span>
-          </h2>
-          <p class="text-white-50 mb-0 small">Happy Clients</p>
-        </div>
-        <div class="col-6 col-md-3 anim-scale-in anim-delay-4">
-          <h2 class="display-5 fw-bold" style="color:#d4a017;font-family:'Playfair Display',serif">
-            <span data-count="200" data-suffix="+">0</span>
-          </h2>
-          <p class="text-white-50 mb-0 small">Product Lines</p>
-        </div>
-      </div>
-    </div>
-  </section> -->
-  <!-- ======================== End ================================= -->
-
+   
 
   <!-- ===================== FEATURED PRODUCTS ===================== -->
   <section class="py-5 py-lg-6 bg-light">
@@ -497,7 +463,7 @@
   (function () {
     'use strict';
 
-    /* ── 1. SCROLL REVEAL (IntersectionObserver) ─────────────── */
+    /* ======================== 1. SCROLL REVEAL (IntersectionObserver) ======================== */
     const revealEls = document.querySelectorAll(
       '.anim-fade-up, .anim-fade-left, .anim-fade-right, .anim-scale-in, .anim-pop-in'
     );
@@ -514,7 +480,7 @@
     revealEls.forEach(el => revealObserver.observe(el));
 
 
-    /* ── 2. COUNTER ANIMATION ────────────────────────────────── */
+    /* ======================== 2. COUNTER ANIMATION ======================== */
     const counters = document.querySelectorAll('[data-count]');
 
     const countObserver = new IntersectionObserver((entries) => {
@@ -544,14 +510,14 @@
     counters.forEach(el => countObserver.observe(el));
 
 
-    /* ── 3. NAVBAR SHRINK ON SCROLL ─────────────────────────── */
+    /* ======================== 3. NAVBAR SHRINK ON SCROLL ======================== */
     const navbar = document.querySelector('.navbar');
     window.addEventListener('scroll', () => {
       navbar.classList.toggle('navbar-scrolled', window.scrollY > 60);
     }, { passive: true });
 
 
-    /* ── 4. RIPPLE ON BUTTONS ────────────────────────────────── */
+    /* ======================== 4. RIPPLE ON BUTTONS ======================== */
     document.querySelectorAll('.btn-ripple').forEach(btn => {
       btn.addEventListener('click', function (e) {
         const circle = document.createElement('span');
@@ -565,7 +531,7 @@
     });
 
 
-    /* ── 5. IMAGE LAZY FADE-IN ───────────────────────────────── */
+    /* ======================== 5. IMAGE LAZY FADE-IN ======================== */
     document.querySelectorAll('img.img-anim').forEach(img => {
       if (img.complete) {
         img.classList.add('img-loaded');
@@ -575,7 +541,7 @@
     });
 
 
-    /* ── 6. SECTION TAG UNDERLINE TRIGGER ────────────────────── */
+    /* ======================== 6. SECTION TAG UNDERLINE TRIGGER ======================== */
     document.querySelectorAll('.section-tag').forEach(tag => {
       const obs = new IntersectionObserver(entries => {
         if (entries[0].isIntersecting) {
@@ -587,7 +553,7 @@
     });
 
 
-    /* ── 7. SECTION HEADING LINE TRIGGER ─────────────────────── */
+    /* ======================== 7. SECTION HEADING LINE TRIGGER ======================== */
     document.querySelectorAll('.section-heading-line').forEach(el => {
       const obs = new IntersectionObserver(entries => {
         if (entries[0].isIntersecting) {
