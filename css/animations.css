@@ -710,9 +710,9 @@ h2.anim-heading.sr-visible::after {
 }
 
 /* CTA button pulse */
-.cta-sec .btn-gold {
+/* .cta-sec .btn-gold {
 	animation: ctaPulse 2.5s ease-in-out infinite;
-}
+} */
 @keyframes ctaPulse {
 	0%,
 	100% {
